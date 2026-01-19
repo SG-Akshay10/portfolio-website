@@ -10,10 +10,11 @@ export const RESUME_DATA: ResumeData = {
     },
     links: {
         linkedin: "https://www.linkedin.com/in/akshay-s-g-a81516239/",
-        github: "https://github.com/SG-Akshay10"
+        github: "https://github.com/SG-Akshay10",
+        resume: "https://drive.google.com/file/d/1W4j9vi62lqEz-N-IqL8Z0hKLCkzCxlB5/view?usp=sharing"
     },
     skills: {
-        languages: ["Python", "C", "Java", "JavaScript", "HTML/CSS", "React.js", "FastAPI"],
+        languages: ["Python", "C", "JavaScript", "HTML/CSS", "React.js", "FastAPI"],
         tools: ["Tableau", "SQL", "PostgreSQL", "Snowflake", "MongoDB", "Figma", "GitHub", "Docker", "Hugging Face"],
         ai_ml: ["PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "FAISS", "PGVector", "Ollama", "Pandas", "NumPy", "OpenCV"]
     },
@@ -25,22 +26,22 @@ export const RESUME_DATA: ResumeData = {
             location: "Bengaluru, India",
             highlights: [
                 {
-                    text: "Designed AI-Quick-Insight, a multi-agent NL-to-visualization system leveraging LlamaIndex, PGVector, Snowflake, and FastAPI to generate interactive charts and insights from user queries in under 30 seconds.",
+                    text: "Developed Quick Protect, an AI-powered security analysis platform that enables sales engineers to perform comprehensive vulnerability assessments on Android and iOS applications, streamlining the process from binary analysis to customer proposal generation.",
                     subItems: [
-                        "Implemented table retrieval over 100+ schema objects using RAG for top-5 context selection.",
-                        "Created a conversational refinement pipeline using an LLM-judge to resolve ambiguous or incomplete queries dynamically.",
-                        "Achieved 63% accuracy in auto-generated visualizations comparable to in-house data analyst output, significantly accelerating time-to-insight."
+                        "Built automated binary decompilation pipeline using Androguard (Android) and Ghidra (iOS) to reverse-engineer mobile applications into analyzable source code.",
+                        "mplemented LLM-powered code deobfuscation module that detects and reverses obfuscation patterns, making previously unreadable code accessible for security analysis.",
+                        "Designed LangGraph-based orchestration workflows to manage multi-stage analysis processes with conditional routing based on code characteristics."
                     ]
                 },
-                "Built a Retrieval Augmented Generation (RAG) based chatbot using LangChain, FastAPI, and PGVector to automate responses for documentation-related queries, leading to a 40% reduction in monthly customer support inquiries and significantly decreasing reliance on the services team.",
                 {
-                    text: "Developed AppSec-Insight, a cross-platform vulnerability analysis system leveraging Androguard, Ghidra SDK, and LangGraph to automate security auditing and democratize technical insights for non-expert teams.",
+                    text: "Developed AI-Quick-Insight, a business intelligence platform that enables non-technical users to query complex databases using natural language, automatically generating visualizations from conversational inputs.",
                     subItems: [
-                        "Engineered a unified ingestion pipeline that normalizes Android and iOS binaries to generate Guard Blueprints automatically prescribing specific security defenses for identified vulnerabilities.",
-                        "Integrated a generative deobfuscation pipeline using LLMs to infer meaningful symbols in hardened bytecode, enabling accurate static analysis on previously opaque binaries.",
-                        "Built a RAG-enhanced conversational agent that empowers internal service teams to autonomously resolve complex client security inquiries, significantly reducing reliance on senior security engineers."
+                        "Designed semantic search to identify relevant database tables integrated with LLM-based ambiguity detection that asks clarifying questions and rephrases unclear user inputs.",
+                        "Developed natural language to SQL converter that generates optimized, validated queries from refined user questions, maintaining database security and query accuracy.",
+                        "Created end-to-end pipeline delivering query results as JSON to frontend, automatically generating appropriate charts and graphs for instant data insights."
                     ]
-                }
+                },
+                "Built a Retrieval Augmented Generation (RAG) based chatbot using LangChain, FastAPI, and PGVector to automate responses for documentation-related queries, leading to a 40% reduction in monthly customer support inquiries and significantly decreasing reliance on the services team."
             ]
         },
         {
@@ -49,10 +50,14 @@ export const RESUME_DATA: ResumeData = {
             period: "June 2024 - Jan 2025",
             location: "Remote",
             highlights: [
-                "Built a drag-and-drop no-code computer vision platform allowing users to train, annotate, export, and deploy models without writing code.",
-                "Developed cloud-based data ingestion pipeline with parallel batch processing for efficient customer uploads, achieving 75% reduction in upload time by replacing sequential zip extraction with multi-threaded folder processing.",
-                "Engineered automated training pipeline with configurable parameters (epochs, learning rate, model selection) and integrated multiple state-of-the-art computer vision architectures including YOLO, EVA and DINO.",
-                "Implemented model export functionality supporting multiple formats (ONNX, TensorRT) with seamless deployment pipeline using hosted inference servers."
+                {
+                    text: "Built a no-code computer vision platform enabling users to train, annotate, export, and deploy models without writing code.",
+                    subItems: [
+                        "Engineered cloud-based data ingestion pipeline with parallel batch processing for efficient customer uploads, achieving 75% reduction in upload time by replacing sequential zip extraction with multi-threaded folder processing.",
+                        "Engineered automated training pipeline with configurable parameters (epochs, learning rate, model selection) and integrated multiple state-of-the-art computer vision architectures including YOLO, EVA, and DINO.",
+                        "Implemented model export functionality supporting multiple formats (ONNX, TensorRT) with seamless deployment pipeline using hosted inference servers."
+                    ]
+                }
             ]
         },
         {
@@ -61,10 +66,14 @@ export const RESUME_DATA: ResumeData = {
             period: "Dec 2023 - May 2024",
             location: "Chennai, India",
             highlights: [
-                "Developed a real-time notification engine using Python to analyze live match data from cricket databases and detect key events using a rule-based system and delivered notifications to users through the platform app.",
-                "Fine-tuned a quantized Mistral-7B language model for generating AI cricket commentary using enriched ball-by-ball metadata.",
-                "Integrated the notification engine with the commentary system to dynamically enrich live commentary, reducing the manual effort for human commentators by 80%.",
-                "Trained a YOLO-based video analytics tool to extract bowler metrics (ball grip, delivery type, line, length, speed) from match footage, enabling performance analysis for coaching and scouting use-cases."
+                {
+                    text: "Developed an AI-powered cricket commentary system that combines real-time event detection with automated commentary generation to enhance live match experiences and reduce manual commentary effort by 80%.",
+                    subItems: [
+                        "Built real-time notification engine using Python to analyze live match data from cricket databases, detect key events using a rule-based system, and integrate with the commentary model to dynamically enrich responses.",
+                        "Fine-tuned a quantized Mistral-7B language model for generating AI cricket commentary using enriched ball-by-ball metadata with dynamic context awareness.",
+                    ]
+                },
+                "Trained a YOLO model to extract bowler metrics (ball grip, delivery type, line, length, speed) from match footage, enabling performance analysis for coaching and scouting."
             ]
         }
     ],

@@ -7,6 +7,7 @@ export interface ContactInfo {
 export interface SocialLinks {
   linkedin: string;
   github: string;
+  resume?: string;
 }
 
 export type HighlightItem = string | { text: string; subItems: string[] };

@@ -54,18 +54,33 @@ const App: React.FC = () => {
                     {link.name}
                   </motion.a>
                 ))}
+
+                {/* Resume Button */}
+                {RESUME_DATA.links.resume && (
+                  <motion.a
+                    href={RESUME_DATA.links.resume}
+                    target="_blank"
+                    rel="noreferrer"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5, duration: 0.3 }}
+                    className="bg-accent text-primary px-4 py-2 rounded-md text-sm font-bold hover:bg-white transition-colors ml-4"
+                  >
+                    Download Resume
+                  </motion.a>
+                )}
               </div>
             </div>
+          </div>
 
-            {/* Mobile Menu Button */}
-            <div className="md:hidden">
-              <button
-                onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-accent hover:text-white focus:outline-none"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-accent hover:text-white focus:outline-none"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
 
@@ -89,6 +104,17 @@ const App: React.FC = () => {
                     {link.name}
                   </a>
                 ))}
+                {RESUME_DATA.links.resume && (
+                  <a
+                    href={RESUME_DATA.links.resume}
+                    target="_blank"
+                    rel="noreferrer"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block px-3 py-2 rounded-md text-base font-bold text-primary bg-accent hover:bg-white mt-2 text-center"
+                  >
+                    Download Resume
+                  </a>
+                )}
               </div>
             </motion.div>
           )}
@@ -152,7 +178,7 @@ const App: React.FC = () => {
 
       {/* AI Chat Widget */}
       <ChatWidget />
-    </div>
+    </div >
   );
 };
 
