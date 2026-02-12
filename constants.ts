@@ -79,6 +79,16 @@ export const RESUME_DATA: ResumeData = {
     ],
     projects: [
         {
+            name: "SafeScroll",
+            tech: "Chrome Extension, JavaScript, Python, FastAPI, TensorFlow.js",
+            description: [
+                "Privacy-first browser extension for real-time NSFW content detection.",
+                "Utilizes on-device machine learning for instant blurring of sensitive images.",
+                "Ensures user privacy by processing all data locally without external server calls."
+            ],
+            link: "https://github.com/SG-Akshay10/SafeScroll"
+        },
+        {
             name: "Chat-with-PDF",
             tech: "Python, LangChain, Gemini API, React",
             description: [
@@ -107,16 +117,6 @@ export const RESUME_DATA: ResumeData = {
                 "Rapid prototype development and deployment."
             ],
             link: "https://github.com/SG-Akshay10/Startup-Hackathon"
-        },
-        {
-            name: "ContentMakerBlog",
-            tech: "Generative AI, Python, NLP",
-            description: [
-                "Automated blog content generation tool.",
-                "Uses LLMs to create SEO-friendly articles.",
-                "Streamlines content marketing workflows."
-            ],
-            link: "https://github.com/SG-Akshay10/ContentMakerBlog"
         },
         {
             name: "Fashion-image-segmentation",
