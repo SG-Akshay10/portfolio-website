@@ -1,6 +1,6 @@
 import React from 'react';
 import { RESUME_DATA } from '../constants';
-import { Folder, ExternalLink, Github } from 'lucide-react';
+import { Folder, ExternalLink, Github, Puzzle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Projects: React.FC = () => {
@@ -22,7 +22,12 @@ export const Projects: React.FC = () => {
                 <Folder size={28} strokeWidth={2} />
               </div>
               <div className="flex gap-3 z-10">
-                <a href={project.link} target="_blank" rel="noreferrer" className="text-accent/60 hover:text-accent transition-colors">
+                {project.addonLink && (
+                  <a href={project.addonLink} target="_blank" rel="noreferrer" className="text-accent/60 hover:text-accent transition-colors" title="Firefox Add-on">
+                    <Puzzle size={20} />
+                  </a>
+                )}
+                <a href={project.link} target="_blank" rel="noreferrer" className="text-accent/60 hover:text-accent transition-colors" title="View Source">
                   <Github size={20} />
                 </a>
               </div>

@@ -86,7 +86,8 @@ export const RESUME_DATA: ResumeData = {
                 "Utilizes on-device machine learning for instant blurring of sensitive images.",
                 "Ensures user privacy by processing all data locally without external server calls."
             ],
-            link: "https://github.com/SG-Akshay10/SafeScroll"
+            link: "https://github.com/SG-Akshay10/SafeScroll",
+            addonLink: "https://addons.mozilla.org/en-US/firefox/addon/safescroll-nsfw-blocker/"
         },
         {
             name: "Chat-with-PDF",

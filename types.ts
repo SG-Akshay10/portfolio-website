@@ -25,6 +25,7 @@ export interface ProjectItem {
   tech: string;
   description: string[];
   link: string;
+  addonLink?: string;
 }
 
 export interface EducationItem {
