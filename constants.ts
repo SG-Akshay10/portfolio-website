@@ -79,6 +79,16 @@ export const RESUME_DATA: ResumeData = {
     ],
     projects: [
         {
+            name: "Synth-FM",
+            tech: "React, Python, FastAPI, OpenAI/Gemini/Groq, Kokoro TTS",
+            description: [
+                "End-to-end AI platform that autonomously generates engaging, multi-speaker podcasts from any topic.",
+                "Integrates multiple LLMs (OpenAI, Gemini, Groq) for diverse and dynamic script generation.",
+                "Utilizes high-fidelity Kokoro TTS for realistic voice synthesis, featuring intelligent background music mixing."
+            ],
+            link: "https://github.com/SG-Akshay10/synth-fm"
+        },
+        {
             name: "SafeScroll",
             tech: "Chrome Extension, JavaScript, Python, FastAPI, TensorFlow.js",
             description: [
@@ -149,16 +159,16 @@ export const RESUME_DATA: ResumeData = {
             ],
             link: "https://github.com/SG-Akshay10/Suicide-Data-Analysis"
         },
-        {
-            name: "movie-recommendation",
-            tech: "Machine Learning, Collaborative Filtering",
-            description: [
-                "Personalized movie recommender system.",
-                "Uses collaborative and content-based filtering.",
-                "Enhances user discovery experience."
-            ],
-            link: "https://github.com/SG-Akshay10/movie-recommendation"
-        }
+        // {
+        //     name: "movie-recommendation",
+        //     tech: "Machine Learning, Collaborative Filtering",
+        //     description: [
+        //         "Personalized movie recommender system.",
+        //         "Uses collaborative and content-based filtering.",
+        //         "Enhances user discovery experience."
+        //     ],
+        //     link: "https://github.com/SG-Akshay10/movie-recommendation"
+        // }
     ],
     education: [
         {
