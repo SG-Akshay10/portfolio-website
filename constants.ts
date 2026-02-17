@@ -86,7 +86,8 @@ export const RESUME_DATA: ResumeData = {
                 "Integrates multiple LLMs (OpenAI, Gemini, Groq) for diverse and dynamic script generation.",
                 "Utilizes high-fidelity Kokoro TTS for realistic voice synthesis, featuring intelligent background music mixing."
             ],
-            link: "https://github.com/SG-Akshay10/synth-fm"
+            link: "https://github.com/SG-Akshay10/synth-fm",
+            addonLink: "https://synth-fm.netlify.app/"
         },
         {
             name: "SafeScroll",
