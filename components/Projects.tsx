@@ -15,7 +15,7 @@ export const Projects: React.FC = () => {
             transition={{ delay: index * 0.1, duration: 0.5 }}
             viewport={{ once: true }}
             whileHover={{ y: -8, scale: 1.02 }}
-            className="group relative bg-primary rounded-lg p-6 border-2 border-accent/20 hover:border-accent hover:shadow-[0_0_20px_rgba(226,232,240,0.15)] transition-all duration-300 flex flex-col h-full"
+            className="group relative bg-primary rounded-lg p-6 border-2 border-accent/20 hover:border-accent hover:shadow-[0_0_20px_rgba(152,134,134,0.3)] transition-all duration-300 flex flex-col h-full"
           >
             <div className="flex justify-between items-start mb-4">
               <div className="text-accent">

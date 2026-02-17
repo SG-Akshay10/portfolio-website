@@ -34,7 +34,7 @@ export const Hero: React.FC = () => {
       </motion.div>
 
       <motion.div variants={item}>
-        <h2 className="text-secondary font-mono text-xl md:text-2xl mb-8 tracking-wide">
+        <h2 className="text-accent font-mono text-xl md:text-2xl mb-8 tracking-wide">
           {RESUME_DATA.title}
         </h2>
         <p className="text-muted text-lg md:text-xl font-mono max-w-3xl leading-relaxed">
