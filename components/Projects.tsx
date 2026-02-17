@@ -14,8 +14,8 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
             viewport={{ once: true }}
-            whileHover={{ y: -8 }}
-            className="group relative bg-primary rounded-lg p-6 border-2 border-accent hover:shadow-[8px_8px_0px_0px_rgba(204,243,129,1)] transition-all duration-200 flex flex-col h-full"
+            whileHover={{ y: -8, scale: 1.02 }}
+            className="group relative bg-primary rounded-lg p-6 border-2 border-accent/20 hover:border-accent hover:shadow-[0_0_20px_rgba(245,166,35,0.2)] transition-all duration-300 flex flex-col h-full"
           >
             <div className="flex justify-between items-start mb-4">
               <div className="text-accent">
@@ -33,11 +33,11 @@ export const Projects: React.FC = () => {
               </div>
             </div>
 
-            <h3 className="text-lg font-bold text-white mb-2 group-hover:text-accent transition-colors leading-tight">
+            <h3 className="text-lg font-bold text-std mb-2 group-hover:text-accent transition-colors leading-tight">
               {project.name}
             </h3>
 
-            <div className="text-accent/80 text-xs mb-4 space-y-1 leading-relaxed flex-grow font-mono">
+            <div className="text-muted text-xs mb-4 space-y-1 leading-relaxed flex-grow font-mono">
               {project.description.map((desc, i) => (
                 <p key={i} className="line-clamp-2">{desc}</p>
               ))}

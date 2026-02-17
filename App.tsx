@@ -4,7 +4,6 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Education } from './components/Education';
-import { ChatWidget } from './components/ChatWidget';
 import { Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { RESUME_DATA } from './constants';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -23,7 +22,7 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-primary text-accent selection:bg-accent selection:text-primary relative overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-primary text-std selection:bg-accent selection:text-primary relative overflow-x-hidden font-sans bg-grid-pattern">
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-primary/95 backdrop-blur-md border-b border-accent/20">
@@ -124,8 +123,17 @@ const App: React.FC = () => {
       <main className="relative z-10">
         <section id="hero" className="min-h-screen flex items-center bg-primary relative overflow-hidden">
           {/* Decorative Elements */}
-          <div className="absolute top-20 right-20 w-32 h-32 border-t-4 border-r-4 border-accent rounded-tr-3xl opacity-50"></div>
-          <div className="absolute bottom-20 left-20 w-24 h-24 border-b-4 border-l-4 border-accent rounded-bl-3xl opacity-50"></div>
+          {/* Decorative Elements */}
+          <motion.div
+            animate={{ y: [0, -20, 0], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-20 right-20 w-32 h-32 border-t-4 border-r-4 border-accent rounded-tr-3xl opacity-50"
+          ></motion.div>
+          <motion.div
+            animate={{ y: [0, 20, 0], opacity: [0.3, 0.6, 0.3] }}
+            transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-20 left-20 w-24 h-24 border-b-4 border-l-4 border-accent rounded-bl-3xl opacity-50"
+          ></motion.div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-20">
             <Hero />
@@ -140,7 +148,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Projects - Blue Background */}
-        <div className="bg-primary text-accent">
+        <div className="bg-primary text-std">
           <SectionWrapper id="projects" title="Projects" index="02" variant="blue">
             <Projects />
           </SectionWrapper>
@@ -154,7 +162,7 @@ const App: React.FC = () => {
         </div>
 
         {/* Education - Blue Background */}
-        <div className="bg-primary text-accent">
+        <div className="bg-primary text-std">
           <SectionWrapper id="education" title="Education" index="04" variant="blue">
             <Education />
           </SectionWrapper>
@@ -176,9 +184,7 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* AI Chat Widget */}
-      <ChatWidget />
-    </div >
+    </div>
   );
 };
 

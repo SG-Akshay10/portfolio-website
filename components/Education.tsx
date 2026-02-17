@@ -11,9 +11,9 @@ export const Education: React.FC = () => {
             <GraduationCap size={32} />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white">{edu.institution}</h3>
+            <h3 className="text-xl font-bold text-std">{edu.institution}</h3>
             <p className="text-accent font-medium mt-1">{edu.degree}</p>
-            <div className="flex items-center gap-4 mt-2 text-sm text-accent/80 font-mono">
+            <div className="flex items-center gap-4 mt-2 text-sm text-muted font-mono">
               <span>{edu.period}</span>
               <span className="w-1 h-1 bg-accent rounded-full"></span>
               <span>{edu.gpa}</span>
