@@ -20,9 +20,10 @@
             mono: ['Fira Code', 'monospace'],
           },
           colors: {
-            primary: '#4831d4', // Bold Blue
-            accent: '#ccf381',  // Lime Green
-            secondary: '#3d155f', // Dark Purple text
+            primary: '#000000', // Black
+            accent: '#D1D0D0',  // Light Gray
+            secondary: '#988686', // Mauve
+            tertiary: '#5C4E4E', // Dark Taupe
             light: '#ffffff',
             dark: '#0f172a',
           }
@@ -32,8 +33,8 @@
   </script>
   <style>
     body {
-      background-color: #020617;
-      color: #f8fafc;
+      background-color: #000000;
+      color: #D1D0D0;
       overflow-x: hidden;
     }
 
@@ -43,22 +44,23 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #0f172a;
+      background: #000000;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #334155;
+      background: #5C4E4E;
       border-radius: 4px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #475569;
+      background: #988686;
     }
 
     .bg-grid-pattern {
       background-size: 50px 50px;
-      background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+      /* Adjusted grid pattern to be visible on black background */
+      background-image: linear-gradient(to right, rgba(209, 208, 208, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(209, 208, 208, 0.05) 1px, transparent 1px);
     }
   </style>
 
