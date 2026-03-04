@@ -95,7 +95,7 @@ const App: React.FC = () => {
       </nav>
 
       {/* Left Sidebar Social Links */}
-      <div className="hidden lg:flex fixed left-8 bottom-0 flex-col items-center space-y-6 z-40 after:content-[''] after:w-[1px] after:h-24 after:bg-gray-600 after:block">
+      <div className="hidden lg:flex fixed left-8 bottom-8 flex-col items-center space-y-6 z-40">
         <SocialLink href={`mailto:${RESUME_DATA.contact.email}`} icon={<Mail size={28} />} />
         <SocialLink href={RESUME_DATA.links.github} icon={<Github size={28} />} />
         <SocialLink href={RESUME_DATA.links.linkedin} icon={<Linkedin size={28} />} />

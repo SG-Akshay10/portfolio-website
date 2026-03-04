@@ -19,12 +19,12 @@ export const Experience: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative flex flex-col md:flex-row items-start gap-8 w-full group"
+              className="relative flex flex-col md:flex-row items-start w-full group mb-16 md:mb-0"
             >
               {/* Left Side: Metadata */}
-              <div className="w-full md:w-1/3 flex flex-col items-start md:items-end md:text-right relative z-10 md:pr-12">
+              <div className="w-full md:w-1/3 flex flex-col items-start md:items-end md:text-right relative z-10 md:pr-12 md:pb-16">
                 {/* Timeline Dot */}
-                <div className="hidden md:flex absolute -right-[6.5px] top-2 w-3 h-3 rounded-full bg-primary border-[3px] border-gray-600 group-hover:border-accent group-hover:bg-accent transition-all duration-300 shadow-[0_0_0_rgba(139,92,246,0)] group-hover:shadow-[0_0_15px_rgba(139,92,246,0.6)]"></div>
+                <div className="hidden md:flex absolute -right-[6px] top-2 w-3 h-3 rounded-full bg-primary border-[3px] border-gray-600 group-hover:border-accent group-hover:bg-accent transition-all duration-300 shadow-[0_0_0_rgba(139,92,246,0)] group-hover:shadow-[0_0_15px_rgba(139,92,246,0.6)]"></div>
 
                 <h3 className="text-2xl lg:text-3xl font-black text-white group-hover:text-accent transition-colors duration-300 tracking-tight leading-tight">
                   {job.role}
@@ -42,12 +42,11 @@ export const Experience: React.FC = () => {
               </div>
 
               {/* Right Side: Detailed Descriptions */}
-              <div className="w-full md:w-2/3 md:pl-8 text-left relative z-10">
+              <div className="w-full md:w-2/3 md:pl-8 text-left relative z-10 mt-6 md:mt-0 md:pb-16">
                 <ul className="space-y-4 text-gray-300 text-[15px] md:text-base leading-relaxed text-opacity-90">
                   {job.highlights.map((highlight, i) => (
                     <li key={i} className="flex flex-col items-start gap-2">
                       <div className="flex items-start">
-                        <ChevronRight size={18} className="text-accent shrink-0 mt-1 mr-3" />
                         <span className="font-medium">
                           {typeof highlight === 'string' ? highlight : highlight.text}
                         </span>

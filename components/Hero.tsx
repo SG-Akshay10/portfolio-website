@@ -6,6 +6,7 @@ import profileImg from '../assest/images/DSC_0609.JPG';
 export const Hero: React.FC = () => {
   const roles = ["AI ENGINEER", "FULL-STACK DEV", "TECH ENTHUSIAST"];
   const [currentRole, setCurrentRole] = useState(0);
+  const [isImageHovered, setIsImageHovered] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,7 +39,7 @@ export const Hero: React.FC = () => {
       >
         <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-b from-secondary to-primary border-4 border-secondary shadow-[0_0_60px_rgba(139,92,246,0.3)] flex items-center justify-center overflow-hidden relative group">
           <div
-            className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105"
+            className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
             style={{ backgroundImage: `url(${profileImg})` }}
           ></div>
         </div>
