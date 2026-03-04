@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { RESUME_DATA } from '../constants';
 import { motion, AnimatePresence } from 'framer-motion';
+import profileImg from '../assest/images/DSC_0609.JPG';
 
 export const Hero: React.FC = () => {
   const roles = ["AI ENGINEER", "FULL-STACK DEV", "TECH ENTHUSIAST"];
@@ -36,7 +37,10 @@ export const Hero: React.FC = () => {
         className="z-10 md:w-1/3 flex justify-center my-12 md:my-0 relative"
       >
         <div className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-b from-secondary to-primary border-4 border-secondary shadow-[0_0_60px_rgba(139,92,246,0.3)] flex items-center justify-center overflow-hidden relative group">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3')] bg-cover bg-center opacity-50 transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-105"></div>
+          <div
+            className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105"
+            style={{ backgroundImage: `url(${profileImg})` }}
+          ></div>
         </div>
       </motion.div>
 
@@ -56,8 +60,7 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               exit={{ opacity: 0, y: -20, rotateX: 90 }}
               transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-              className="text-5xl md:text-6xl lg:text-[70px] font-extrabold tracking-tight text-transparent w-full flex md:justify-end origin-bottom"
-              style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}
+              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white w-full flex md:justify-end origin-bottom drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]"
             >
               {roles[currentRole]}
             </motion.h2>
