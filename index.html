@@ -20,11 +20,11 @@
             mono: ['Fira Code', 'monospace'],
           },
           colors: {
-            primary: '#4831d4', // Bold Blue
-            accent: '#ccf381',  // Lime Green
-            secondary: '#3d155f', // Dark Purple text
+            primary: '#000000', // Black
+            accent: '#8b5cf6',  // Purple glow
+            secondary: '#111111', // Dark Gray
             light: '#ffffff',
-            dark: '#0f172a',
+            dark: '#111111',
           }
         }
       }
@@ -32,8 +32,8 @@
   </script>
   <style>
     body {
-      background-color: #020617;
-      color: #f8fafc;
+      background-color: #000000;
+      color: #ffffff;
       overflow-x: hidden;
     }
 
@@ -43,22 +43,23 @@
     }
 
     ::-webkit-scrollbar-track {
-      background: #0f172a;
+      background: #000000;
     }
 
     ::-webkit-scrollbar-thumb {
-      background: #334155;
+      background: #111111;
       border-radius: 4px;
+      border: 1px solid #333;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-      background: #475569;
+      background: #8b5cf6;
     }
 
     .bg-grid-pattern {
       background-size: 50px 50px;
-      background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+      background-image: linear-gradient(to right, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
     }
   </style>
   <script type="importmap">
@@ -76,7 +77,7 @@
   <link rel="stylesheet" href="/index.css">
 </head>
 
-<body class="bg-darker relative">
+<body class="bg-primary relative">
   <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>
