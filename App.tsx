@@ -4,7 +4,6 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { Education } from './components/Education';
-import { ChatWidget } from './components/ChatWidget';
 import { Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { RESUME_DATA } from './constants';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -100,10 +99,10 @@ const App: React.FC = () => {
 
       {/* Left Sidebar Social Links */}
       <div className="hidden lg:flex fixed left-8 bottom-0 flex-col items-center space-y-6 z-40 after:content-[''] after:w-[1px] after:h-24 after:bg-gray-600 after:block">
-        <SocialLink href={`mailto:${RESUME_DATA.contact.email}`} icon={<Mail size={20} />} />
-        <SocialLink href={RESUME_DATA.links.github} icon={<Github size={20} />} />
-        <SocialLink href={RESUME_DATA.links.linkedin} icon={<Linkedin size={20} />} />
-        <SocialLink href={`tel:${RESUME_DATA.contact.phone.replace(/\s/g, '')}`} icon={<Phone size={20} />} />
+        <SocialLink href={`mailto:${RESUME_DATA.contact.email}`} icon={<Mail size={28} />} />
+        <SocialLink href={RESUME_DATA.links.github} icon={<Github size={28} />} />
+        <SocialLink href={RESUME_DATA.links.linkedin} icon={<Linkedin size={28} />} />
+        <SocialLink href={`tel:${RESUME_DATA.contact.phone.replace(/\s/g, '')}`} icon={<Phone size={28} />} />
       </div>
 
       {/* Floating Resume Button */}
@@ -117,7 +116,7 @@ const App: React.FC = () => {
           transition={{ delay: 0.5, duration: 0.3 }}
           className="fixed bottom-8 right-8 z-50 bg-secondary text-white border border-gray-700 px-6 py-3 rounded-full text-sm font-bold hover:border-accent hover:text-accent transition-colors flex items-center gap-2 shadow-lg shadow-accent/10"
         >
-          RESUME <span className="text-xl leading-none">📄</span>
+          DOWNLOAD RESUME
         </motion.a>
       )}
 
@@ -160,20 +159,16 @@ const App: React.FC = () => {
       <footer className="bg-primary text-gray-400 py-12 relative z-10 lg:pl-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <div className="flex lg:hidden space-x-8 mb-8">
-            <SocialLink href={`mailto:${RESUME_DATA.contact.email}`} icon={<Mail size={24} />} />
-            <SocialLink href={RESUME_DATA.links.linkedin} icon={<Linkedin size={24} />} />
-            <SocialLink href={RESUME_DATA.links.github} icon={<Github size={24} />} />
-            <SocialLink href={`tel:${RESUME_DATA.contact.phone.replace(/\s/g, '')}`} icon={<Phone size={24} />} />
+            <SocialLink href={`mailto:${RESUME_DATA.contact.email}`} icon={<Mail size={32} />} />
+            <SocialLink href={RESUME_DATA.links.linkedin} icon={<Linkedin size={32} />} />
+            <SocialLink href={RESUME_DATA.links.github} icon={<Github size={32} />} />
+            <SocialLink href={`tel:${RESUME_DATA.contact.phone.replace(/\s/g, '')}`} icon={<Phone size={32} />} />
           </div>
           <p className="font-sans text-center text-sm">
-            Designed & Built by Akshay S G. <br />
-            Inspired by Redoyanul Haque.
+            Designed & Built by Akshay S G.
           </p>
         </div>
       </footer>
-
-      {/* AI Chat Widget */}
-      <ChatWidget />
     </div >
   );
 };
@@ -199,16 +194,14 @@ const SectionWrapper: React.FC<{ id: string; title: string; index: string; child
 );
 
 const SocialLink: React.FC<{ href: string; icon: React.ReactNode }> = ({ href, icon }) => (
-  <motion.a
-    href={href}
-    target="_blank"
-    rel="noreferrer"
-    className="text-gray-400 hover:text-accent transition-colors block"
+  <motion.div
+    onClick={() => window.open(href, '_blank', 'noopener,noreferrer')}
+    className="text-gray-400 hover:text-accent transition-colors block cursor-pointer"
     whileHover={{ y: -3 }}
     whileTap={{ scale: 0.9 }}
   >
     {icon}
-  </motion.a>
+  </motion.div>
 );
 
 export default App;
