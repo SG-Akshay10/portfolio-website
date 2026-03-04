@@ -40,9 +40,9 @@ export const Projects: React.FC = () => {
               </div>
             </div>
 
-            <div className="text-gray-300 text-sm md:text-base space-y-3 leading-relaxed flex-grow z-10">
+            <div className="text-gray-400 font-medium text-sm md:text-base space-y-4 leading-relaxed flex-grow z-10 text-justify">
               {project.description.map((desc, i) => (
-                <p key={i}>{desc}</p>
+                <p key={i} className="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-accent/50 before:rounded-full group-hover:before:bg-accent before:transition-colors">{desc}</p>
               ))}
             </div>
 
