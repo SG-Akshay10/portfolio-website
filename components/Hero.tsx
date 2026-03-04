@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
         className="z-20 md:w-1/3 flex flex-col items-start"
       >
         <span className="text-accent text-2xl md:text-3xl font-light mb-2">Hello! I'm</span>
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white leading-[0.9]">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-[0.9]">
           AKSHAY<br />S G
         </h1>
       </motion.div>
@@ -56,8 +56,8 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               exit={{ opacity: 0, y: -20, rotateX: 90 }}
               transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter text-transparent w-full flex md:justify-end origin-bottom"
-              style={{ WebkitTextStroke: '2px rgba(255,255,255,0.8)' }}
+              className="text-5xl md:text-6xl lg:text-[70px] font-extrabold tracking-tight text-transparent w-full flex md:justify-end origin-bottom"
+              style={{ WebkitTextStroke: '2px rgba(255,255,255,0.9)' }}
             >
               {roles[currentRole]}
             </motion.h2>

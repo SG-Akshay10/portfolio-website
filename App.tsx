@@ -32,12 +32,9 @@ const App: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex-shrink-0 font-bold text-xl tracking-tighter text-white font-sans cursor-pointer flex items-center gap-2"
+              className="flex-shrink-0 font-bold text-2xl tracking-tighter text-white font-sans cursor-pointer flex items-center gap-2"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center text-white font-bold text-sm">
-                A
-              </div>
               Akshay
             </motion.div>
 
