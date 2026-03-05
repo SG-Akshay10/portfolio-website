@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export const Projects: React.FC = () => {
   return (
     <div className="space-y-16 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {RESUME_DATA.projects.map((project, index) => (
           <motion.div
             key={index}
@@ -14,7 +14,7 @@ export const Projects: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.6 }}
             viewport={{ once: true, margin: "-50px" }}
-            className="group relative bg-[#111111]/80 rounded-2xl p-8 border border-gray-800 hover:border-accent/40 hover:bg-[#151515] transition-all duration-300 flex flex-col h-full overflow-hidden shadow-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
+            className="group relative bg-[#111111]/80 rounded-2xl p-6 md:p-8 border border-gray-800 hover:border-accent/40 hover:bg-[#151515] transition-all duration-300 flex flex-col h-full overflow-hidden shadow-lg hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
           >
             {/* Ambient Background Glow on Hover */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>

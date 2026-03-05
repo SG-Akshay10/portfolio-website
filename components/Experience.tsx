@@ -10,7 +10,7 @@ export const Experience: React.FC = () => {
       {/* Central Separator Line */}
       <div className="hidden md:block absolute left-1/3 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary via-gray-700 to-primary z-0 transform -translate-x-1/2"></div>
 
-      <div className="space-y-16">
+      <div className="space-y-12 md:space-y-16">
         {RESUME_DATA.experience.map((job, index) => {
           return (
             <motion.div
@@ -19,10 +19,10 @@ export const Experience: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative flex flex-col md:flex-row items-start w-full group mb-16 md:mb-0"
+              className="relative flex flex-col md:flex-row items-start w-full group"
             >
               {/* Left Side: Metadata */}
-              <div className="w-full md:w-1/3 flex flex-col items-start md:items-end md:text-right relative z-10 md:pr-12 md:pb-16">
+              <div className="w-full md:w-1/3 flex flex-col items-start md:items-end md:text-right relative z-10 mb-4 md:mb-0 md:pr-12 md:pb-16">
                 {/* Timeline Dot */}
                 <div className="hidden md:flex absolute -right-[6px] top-2 w-3 h-3 rounded-full bg-primary border-[3px] border-gray-600 group-hover:border-accent group-hover:bg-accent transition-all duration-300 shadow-[0_0_0_rgba(139,92,246,0)] group-hover:shadow-[0_0_15px_rgba(139,92,246,0.6)]"></div>
 
@@ -42,7 +42,7 @@ export const Experience: React.FC = () => {
               </div>
 
               {/* Right Side: Detailed Descriptions */}
-              <div className="w-full md:w-2/3 md:pl-8 text-left relative z-10 mt-6 md:mt-0 md:pb-16">
+              <div className="w-full md:w-2/3 md:pl-8 text-left relative z-10 mt-2 md:mt-0 md:pb-16">
                 <ul className="space-y-4 text-gray-300 text-[15px] md:text-base leading-relaxed text-opacity-90">
                   {job.highlights.map((highlight, i) => (
                     <li key={i} className="flex flex-col items-start gap-2">

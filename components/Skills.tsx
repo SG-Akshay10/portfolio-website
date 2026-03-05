@@ -51,9 +51,9 @@ export const Skills: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: (index % 10) * 0.05, duration: 0.4 }}
-              className="group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 bg-[#111111]/80 rounded-2xl border border-gray-800 hover:border-accent/40 hover:bg-[#151515] transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] cursor-default"
+              className="group relative flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-[#111111]/80 rounded-2xl border border-gray-800 hover:border-accent/40 hover:bg-[#151515] transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] cursor-default"
             >
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12 mb-2">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 mb-1 sm:mb-2">
                 {skill === 'LlamaIndex' ? (
                   <>
                     <img
@@ -72,12 +72,12 @@ export const Skills: React.FC = () => {
                 ) : skill === 'Tableau' ? (
                   <>
                     <img
-                      src={`https://cdn.worldvectorlogo.com/logos/tableau-software.svg`}
+                      src={`/logos/tableau-color.svg`}
                       className="absolute inset-0 w-full h-full object-contain brightness-0 invert opacity-100 group-hover:opacity-0 transition-opacity duration-300"
                       alt={skill}
                     />
                     <img
-                      src={`https://cdn.worldvectorlogo.com/logos/tableau-software.svg`}
+                      src={`/logos/tableau-color.svg`}
                       className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
                       alt={skill}
                     />
@@ -85,12 +85,12 @@ export const Skills: React.FC = () => {
                 ) : slug !== "generic" ? (
                   <>
                     <img
-                      src={`https://cdn.simpleicons.org/${slug}/white`}
+                      src={`/logos/${slug}-white.svg`}
                       className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
                       alt={skill}
                     />
                     <img
-                      src={`https://cdn.simpleicons.org/${slug}`}
+                      src={`/logos/${slug}-color.svg`}
                       className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
                       alt={skill}
                     />
