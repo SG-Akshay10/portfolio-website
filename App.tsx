@@ -88,6 +88,16 @@ const App: React.FC = () => {
                     {link.name}
                   </a>
                 ))}
+                {RESUME_DATA.links.resume && (
+                  <a
+                    href={RESUME_DATA.links.resume}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="block px-3 py-2 mt-4 rounded-md text-base font-bold text-accent bg-accent/10 hover:bg-accent/20 border border-accent/30 text-center uppercase tracking-widest"
+                  >
+                    Download Resume
+                  </a>
+                )}
               </div>
             </motion.div>
           )}
@@ -111,7 +121,7 @@ const App: React.FC = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.3 }}
-          className="fixed bottom-8 right-8 z-50 bg-secondary text-white border border-gray-700 px-6 py-3 rounded-full text-sm font-bold hover:border-accent hover:text-accent transition-colors flex items-center gap-2 shadow-lg shadow-accent/10"
+          className="hidden md:flex fixed bottom-8 right-8 z-50 bg-secondary text-white border border-gray-700 px-6 py-3 rounded-full text-sm font-bold hover:border-accent hover:text-accent transition-colors flex items-center gap-2 shadow-lg shadow-accent/10"
         >
           DOWNLOAD RESUME
         </motion.a>

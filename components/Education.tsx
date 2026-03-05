@@ -13,7 +13,7 @@ export const Education: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
-          className="relative group bg-secondary/30 p-8 rounded-2xl border border-secondary/50 hover:border-accent/50 hover:bg-secondary/50 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start sm:items-center overflow-hidden"
+          className="relative group bg-secondary/30 p-6 sm:p-8 rounded-2xl border border-secondary/50 hover:border-accent/50 hover:bg-secondary/50 transition-all duration-300 flex flex-col sm:flex-row gap-4 sm:gap-6 items-start sm:items-center overflow-hidden"
         >
           {/* Ambient Glow */}
           <div className="absolute top-1/2 right-10 w-32 h-32 bg-accent/10 rounded-full blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -translate-y-1/2"></div>
