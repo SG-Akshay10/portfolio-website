@@ -35,7 +35,7 @@ const App: React.FC = () => {
               className="flex-shrink-0 font-bold text-2xl tracking-tighter text-white font-sans cursor-pointer flex items-center gap-2"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              Akshay
+              Akshay S G
             </motion.div>
 
             {/* Desktop Menu */}
