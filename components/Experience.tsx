@@ -1,94 +1,72 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { RESUME_DATA } from '../constants';
-import { Calendar, MapPin, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { MapPin, ChevronRight, Calendar } from 'lucide-react';
 
 export const Experience: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(0);
-
   return (
-    <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-      {/* Tabs list */}
-      <div className="flex md:flex-col overflow-x-auto md:overflow-visible md:w-max border-b md:border-b-0 md:border-l border-primary/20 scrollbar-hide shrink-0">
-        {RESUME_DATA.experience.map((job, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={`px-6 py-3 text-left whitespace-nowrap text-sm font-mono transition-all border-b-2 md:border-b-0 md:border-l-2 -mb-[2px] md:-ml-[2px] relative group ${activeTab === index
-              ? 'border-primary text-primary font-bold bg-primary/10'
-              : 'border-transparent text-primary/60 hover:text-primary hover:bg-primary/5'
-              }`}
-          >
-            {job.company}
-            {activeTab === index && (
-              <motion.div
-                layoutId="activeTabIndicator"
-                className="absolute bottom-0 left-0 w-full h-[2px] md:w-[2px] md:h-full md:top-0 bg-primary"
-              />
-            )}
-          </button>
-        ))}
-      </div>
+    <div className="relative w-full max-w-6xl mx-auto py-10">
 
-      {/* Content */}
-      <div className="flex-1 min-h-[300px]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.3 }}
-            className="w-full"
-          >
-            <div className="mb-6">
-              <h3 className="text-xl md:text-2xl text-primary font-bold mb-2 flex flex-wrap gap-2 items-center">
-                <span>{RESUME_DATA.experience[activeTab].role}</span>
-                <span className="text-primary/70">@ {RESUME_DATA.experience[activeTab].company}</span>
-              </h3>
+      {/* Central Separator Line */}
+      <div className="hidden md:block absolute left-1/3 top-0 bottom-0 w-[1px] bg-gradient-to-b from-primary via-gray-700 to-primary z-0 transform -translate-x-1/2"></div>
 
-              <div className="flex flex-wrap gap-4 text-xs md:text-sm font-mono text-primary/70 mt-1">
-                <span className="flex items-center">
-                  <Calendar className="w-3 h-3 md:w-4 md:h-4 mr-2 text-primary" /> {RESUME_DATA.experience[activeTab].period}
-                </span>
-                <span className="flex items-center">
-                  <MapPin className="w-3 h-3 md:w-4 md:h-4 mr-2 text-primary" /> {RESUME_DATA.experience[activeTab].location}
-                </span>
+      <div className="space-y-16">
+        {RESUME_DATA.experience.map((job, index) => {
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="relative flex flex-col md:flex-row items-start w-full group mb-16 md:mb-0"
+            >
+              {/* Left Side: Metadata */}
+              <div className="w-full md:w-1/3 flex flex-col items-start md:items-end md:text-right relative z-10 md:pr-12 md:pb-16">
+                {/* Timeline Dot */}
+                <div className="hidden md:flex absolute -right-[6px] top-2 w-3 h-3 rounded-full bg-primary border-[3px] border-gray-600 group-hover:border-accent group-hover:bg-accent transition-all duration-300 shadow-[0_0_0_rgba(139,92,246,0)] group-hover:shadow-[0_0_15px_rgba(139,92,246,0.6)]"></div>
+
+                <h3 className="text-2xl lg:text-3xl font-black text-white group-hover:text-accent transition-colors duration-300 tracking-tight leading-tight">
+                  {job.role}
+                </h3>
+                <h4 className="text-lg font-bold text-gray-300 mt-2">{job.company}</h4>
+
+                <div className="flex flex-col md:items-end gap-2 mt-4 text-gray-400 font-mono text-xs tracking-wide">
+                  <span className="flex items-center gap-2">
+                    <Calendar size={12} className="text-accent" /> {job.period}
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <MapPin size={12} className="text-accent" /> {job.location}
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <ul className="space-y-3">
-              {RESUME_DATA.experience[activeTab].highlights.map((highlight, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.05 }}
-                  className="flex items-start text-primary/80 text-sm md:text-base font-medium"
-                >
-                  <span className="text-primary mr-3 mt-1.5 min-w-[12px]"><ChevronRight size={14} /></span>
-                  <div className="leading-relaxed">
-                    {typeof highlight === 'string' ? (
-                      highlight
-                    ) : (
-                      <>
-                        {highlight.text}
-                        <ul className="mt-2 space-y-2 ml-4 border-l border-primary/20 pl-4">
+              {/* Right Side: Detailed Descriptions */}
+              <div className="w-full md:w-2/3 md:pl-8 text-left relative z-10 mt-6 md:mt-0 md:pb-16">
+                <ul className="space-y-4 text-gray-300 text-[15px] md:text-base leading-relaxed text-opacity-90">
+                  {job.highlights.map((highlight, i) => (
+                    <li key={i} className="flex flex-col items-start gap-2">
+                      <div className="flex items-start">
+                        <span className="font-medium">
+                          {typeof highlight === 'string' ? highlight : highlight.text}
+                        </span>
+                      </div>
+                      {typeof highlight !== 'string' && highlight.subItems && (
+                        <ul className="ml-8 space-y-2 mt-2 w-full pr-4">
                           {highlight.subItems.map((sub, j) => (
-                            <li key={j} className="flex items-start text-primary/70 text-sm">
-                              <span className="mr-2 mt-1.5 w-1.5 h-1.5 bg-primary/40 rounded-full shrink-0"></span>
-                              <span>{sub}</span>
+                            <li key={j} className="relative pl-5 before:content-[''] before:absolute before:left-0 before:top-2 before:w-[5px] before:h-[5px] before:bg-gray-600 before:rounded-full group-hover:before:bg-accent/60 before:transition-colors text-gray-400 text-sm leading-relaxed">
+                              {sub}
                             </li>
                           ))}
                         </ul>
-                      </>
-                    )}
-                  </div>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
-        </AnimatePresence>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );

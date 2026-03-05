@@ -1,43 +1,111 @@
 import React from 'react';
 import { RESUME_DATA } from '../constants';
-import { Terminal, Database, Brain } from 'lucide-react';
 import { motion } from 'framer-motion';
+import llamaIndexSvg from '../assest/logo/llamaindex.svg';
+import llamaIndexColorSvg from '../assest/logo/llamaindex-color.svg';
+
+const skillToSlug: Record<string, string> = {
+  "Python": "python",
+  "C": "c",
+  "JavaScript": "javascript",
+  "HTML/CSS": "html5",
+  "React.js": "react",
+  "FastAPI": "fastapi",
+  "Tableau": "tableau",
+  "SQL": "sqlite",
+  "PostgreSQL": "postgresql",
+  "Snowflake": "snowflake",
+  "MongoDB": "mongodb",
+  "Figma": "figma",
+  "GitHub": "github",
+  "Docker": "docker",
+  "Hugging Face": "huggingface",
+  "PyTorch": "pytorch",
+  "TensorFlow": "tensorflow",
+  "LangChain": "langchain",
+  "LlamaIndex": "llamaindex",
+  "FAISS": "meta",
+  "PGVector": "postgresql",
+  "Ollama": "ollama",
+  "Pandas": "pandas",
+  "NumPy": "numpy",
+  "OpenCV": "opencv"
+};
 
 export const Skills: React.FC = () => {
-  const categories = [
-    { name: "Languages & Frameworks", icon: <Terminal className="w-6 h-6" />, skills: RESUME_DATA.skills.languages },
-    { name: "AI / ML & Data Science", icon: <Brain className="w-6 h-6" />, skills: RESUME_DATA.skills.ai_ml },
-    { name: "Tools & Databases", icon: <Database className="w-6 h-6" />, skills: RESUME_DATA.skills.tools },
+  const allSkills = [
+    ...RESUME_DATA.skills.languages,
+    ...RESUME_DATA.skills.ai_ml,
+    ...RESUME_DATA.skills.tools,
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-12">
-      {categories.map((cat, index) => (
-        <div key={index} className="relative group">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="text-accent bg-primary p-3 rounded-lg border border-primary group-hover:border-primary/80 transition-colors duration-300">
-              {cat.icon}
-            </div>
-            <h3 className="text-xl font-bold text-primary">{cat.name}</h3>
-            <div className="h-[2px] bg-primary/20 flex-grow ml-4 group-hover:bg-primary/40 transition-colors"></div>
-          </div>
-
-          <div className="flex flex-wrap gap-3">
-            {cat.skills.map((skill, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.05 }}
-                whileHover={{ scale: 1.05, y: -2 }}
-                className="px-4 py-3 bg-white/50 text-primary rounded-md hover:text-white hover:bg-primary transition-all text-sm font-medium border border-primary/10 cursor-default shadow-sm hover:shadow-md font-mono"
-              >
+    <div className="max-w-6xl mx-auto py-12">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+        {allSkills.map((skill, index) => {
+          const slug = skillToSlug[skill] || "generic";
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: (index % 10) * 0.05, duration: 0.4 }}
+              className="group relative flex flex-col items-center justify-center w-24 h-24 sm:w-28 sm:h-28 bg-[#111111]/80 rounded-2xl border border-gray-800 hover:border-accent/40 hover:bg-[#151515] transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(139,92,246,0.15)] cursor-default"
+            >
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 mb-2">
+                {skill === 'LlamaIndex' ? (
+                  <>
+                    <img
+                      src={llamaIndexSvg}
+                      className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                      alt={skill}
+                    />
+                    <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] flex items-center justify-center">
+                      <img
+                        src={llamaIndexColorSvg}
+                        className="w-full h-full object-contain"
+                        alt={skill}
+                      />
+                    </div>
+                  </>
+                ) : skill === 'Tableau' ? (
+                  <>
+                    <img
+                      src={`https://cdn.worldvectorlogo.com/logos/tableau-software.svg`}
+                      className="absolute inset-0 w-full h-full object-contain brightness-0 invert opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                      alt={skill}
+                    />
+                    <img
+                      src={`https://cdn.worldvectorlogo.com/logos/tableau-software.svg`}
+                      className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+                      alt={skill}
+                    />
+                  </>
+                ) : slug !== "generic" ? (
+                  <>
+                    <img
+                      src={`https://cdn.simpleicons.org/${slug}/white`}
+                      className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                      alt={skill}
+                    />
+                    <img
+                      src={`https://cdn.simpleicons.org/${slug}`}
+                      className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+                      alt={skill}
+                    />
+                  </>
+                ) : (
+                  <div className="w-full h-full bg-gray-600 rounded-md opacity-50 group-hover:bg-accent transition-colors duration-300"></div>
+                )}
+              </div>
+              <span className="text-[10px] sm:text-xs font-mono text-gray-400 group-hover:text-white transition-colors duration-300 text-center px-1 leading-tight flex items-center justify-center h-8 w-full max-w-full overflow-hidden">
                 {skill}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      ))}
+              </span>
+            </motion.div>
+          );
+        })}
+      </div>
     </div>
   );
 };
