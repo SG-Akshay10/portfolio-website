@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import profileImg from '../assest/images/DSC_0609.JPG';
 
 export const Hero: React.FC = () => {
-  const roles = ["AI ENGINEER", "FULL-STACK DEV", "TECH ENTHUSIAST"];
+  const roles = ["AI Engineer", "Full-Stack Dev", "Tech Enthusiast"];
   const [currentRole, setCurrentRole] = useState(0);
   const [isImageHovered, setIsImageHovered] = useState(false);
 
@@ -50,10 +50,9 @@ export const Hero: React.FC = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="z-20 md:w-1/3 flex flex-col items-start md:items-end text-left md:text-right"
+        className="z-20 md:w-1/3 flex flex-col items-center md:items-end text-center md:text-right mt-8 md:mt-0"
       >
-        <span className="text-accent text-2xl md:text-3xl font-light mb-2">An</span>
-        <div className="relative w-full overflow-visible min-h-[120px] md:min-h-[180px]">
+        <div className="relative w-full overflow-visible min-h-[80px] md:min-h-[120px] flex items-center md:items-start justify-center md:justify-end">
           <AnimatePresence mode="popLayout">
             <motion.h2
               key={currentRole}
@@ -61,7 +60,7 @@ export const Hero: React.FC = () => {
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               exit={{ opacity: 0, y: -20, rotateX: 90 }}
               transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white w-full flex md:justify-end origin-bottom drop-shadow-[0_0_15px_rgba(139,92,246,0.5)]"
+              className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)]"
             >
               {roles[currentRole]}
             </motion.h2>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { RESUME_DATA } from '../constants';
 import { motion } from 'framer-motion';
+import llamaIndexSvg from '../assest/logo/llamaindex.svg';
+import llamaIndexColorSvg from '../assest/logo/llamaindex-color.svg';
 
 const skillToSlug: Record<string, string> = {
   "Python": "python",
@@ -55,13 +57,13 @@ export const Skills: React.FC = () => {
                 {skill === 'LlamaIndex' ? (
                   <>
                     <img
-                      src={`https://raw.githubusercontent.com/run-llama/logos/main/llamaindex-logo.svg`}
-                      className="absolute inset-0 w-full h-full object-contain brightness-0 invert opacity-100 group-hover:opacity-0 transition-opacity duration-300"
+                      src={llamaIndexSvg}
+                      className="absolute inset-0 w-full h-full object-contain opacity-100 group-hover:opacity-0 transition-opacity duration-300"
                       alt={skill}
                     />
-                    <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] bg-white/90 rounded-md p-1 flex items-center justify-center">
+                    <div className="absolute inset-0 w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] flex items-center justify-center">
                       <img
-                        src={`https://raw.githubusercontent.com/run-llama/logos/main/llamaindex-logo.svg`}
+                        src={llamaIndexColorSvg}
                         className="w-full h-full object-contain"
                         alt={skill}
                       />
