@@ -88,7 +88,7 @@ export const Hero: React.FC = () => {
           <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="#projects"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-violet-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-sky-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5"
             >
               Explore Work
               <ArrowDownRight size={18} />
@@ -125,7 +125,7 @@ export const Hero: React.FC = () => {
         >
           <div className="relative group">
             {/* Ambient Backlight Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-accent via-violet-500 to-indigo-500 rounded-3xl blur-xl opacity-30 dark:opacity-40 group-hover:opacity-60 transition duration-500"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-accent via-sky-400 to-blue-500 rounded-3xl blur-xl opacity-30 dark:opacity-40 group-hover:opacity-60 transition duration-500"></div>
 
             {/* Main Image Container Card */}
             <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl bg-white dark:bg-[#181C28] p-3 border border-slate-200 dark:border-[#222838] overflow-hidden shadow-2xl flex flex-col">

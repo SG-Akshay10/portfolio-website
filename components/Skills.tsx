@@ -85,7 +85,7 @@ export const Skills: React.FC = () => {
                         />
                         <img
                           src={llamaIndexColorSvg}
-                          className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.4)]"
+                          className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_10px_rgba(14,165,233,0.4)]"
                           alt={skill}
                         />
                       </>
@@ -111,7 +111,7 @@ export const Skills: React.FC = () => {
                         />
                         <img
                           src={`/logos/${slug}-color.svg`}
-                          className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_10px_rgba(139,92,246,0.4)]"
+                          className="absolute inset-0 w-full h-full object-contain opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_10px_rgba(14,165,233,0.4)]"
                           alt={skill}
                         />
                       </>

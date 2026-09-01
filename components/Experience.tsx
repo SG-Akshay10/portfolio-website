@@ -51,7 +51,7 @@ export const Experience: React.FC = () => {
             {job.highlights.map((highlight, i) => (
               <div key={i} className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-accent group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_#8b5cf6]"></span>
+                  <span className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-accent group-hover:scale-125 transition-transform duration-300 shadow-[0_0_8px_#0ea5e9]"></span>
                   <p className="text-slate-800 dark:text-slate-200 font-medium leading-relaxed">
                     {typeof highlight === 'string' ? highlight : highlight.text}
                   </p>

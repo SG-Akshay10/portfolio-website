@@ -85,7 +85,7 @@ const App: React.FC = () => {
               title={isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme"}
               aria-label="Toggle Theme"
             >
-              {isDarkMode ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-violet-600" />}
+              {isDarkMode ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-sky-500" />}
             </button>
 
             {RESUME_DATA.links.resume && (
@@ -93,7 +93,7 @@ const App: React.FC = () => {
                 href={RESUME_DATA.links.resume}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent hover:bg-violet-600 text-white text-xs font-semibold font-mono transition-all shadow-md shadow-accent/20"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent hover:bg-sky-600 text-white text-xs font-semibold font-mono transition-all shadow-md shadow-accent/20"
               >
                 <span>Resume</span>
                 <ArrowUpRight size={14} />
@@ -216,7 +216,7 @@ const App: React.FC = () => {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-violet-600 text-white font-semibold text-sm transition-all duration-300 shadow-xl shadow-accent/25 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-sky-600 text-white font-semibold text-sm transition-all duration-300 shadow-xl shadow-accent/25 hover:-translate-y-0.5"
               >
                 {copiedEmail ? <Check size={16} /> : <Copy size={16} />}
                 <span>{copiedEmail ? "Email Copied!" : "Copy Email Address"}</span>
