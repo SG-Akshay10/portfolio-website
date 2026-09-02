@@ -1,72 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { RESUME_DATA } from '../constants';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, BrainCircuit, Code2, FileText, MapPin, Sparkles } from 'lucide-react';
 import profileImg from '../assest/images/DSC_0609.JPG';
 
-export const Hero: React.FC = () => {
-  const roles = ["AI Engineer", "Full-Stack Dev", "Tech Enthusiast"];
-  const [currentRole, setCurrentRole] = useState(0);
-  const [isImageHovered, setIsImageHovered] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="w-full flex flex-col md:flex-row items-center justify-between min-h-[70vh] relative pb-20">
-      {/* Left side */}
-      <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="z-20 md:w-1/3 flex flex-col items-center md:items-start"
-      >
-        <span className="text-accent text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 block w-full text-center md:text-left">Hello! I'm</span>
-        <h1 className="text-6xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[0.9] w-full text-center md:text-left">
-          AKSHAY<br />S G
-        </h1>
-      </motion.div>
-
-      {/* Center 3D Placeholder */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="z-10 w-full md:w-1/3 flex justify-center my-8 md:my-0 relative"
-      >
-        <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full bg-gradient-to-b from-secondary to-primary border-4 border-secondary shadow-[0_0_60px_rgba(139,92,246,0.3)] flex items-center justify-center overflow-hidden relative group">
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0"
-            style={{ backgroundImage: `url(${profileImg})` }}
-          ></div>
-        </div>
-      </motion.div>
-
-      {/* Right side Roles */}
-      <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
-        className="z-20 w-full md:w-1/3 flex flex-col items-center text-center mt-6 md:mt-0 md:pl-8 lg:pl-12"
-      >
-        <div className="relative w-full overflow-visible min-h-[60px] md:min-h-[120px] flex items-center justify-center">
-          <AnimatePresence mode="popLayout">
-            <motion.h2
-              key={currentRole}
-              initial={{ opacity: 0, y: 20, rotateX: -90 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              exit={{ opacity: 0, y: -20, rotateX: 90 }}
-              transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.15)] whitespace-normal md:whitespace-nowrap px-4 md:px-0"
-            >
-              {roles[currentRole]}
-            </motion.h2>
-          </AnimatePresence>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
+export const Hero: React.FC = () => (
+  <div className="relative py-10 sm:py-12 lg:py-14">
+    <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-4xl">
+      <p className="mb-4 flex items-center gap-2 font-mono text-xs font-medium tracking-wide text-accent sm:text-sm"><span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_0_5px_rgba(217,119,6,.12)]" />  SOFTWARE ENGINEER · BENGALURU, INDIA</p>
+      <h1 className="font-display text-[clamp(3rem,6.5vw,5.7rem)] font-medium leading-[.93] tracking-[-0.065em] text-slate-950 dark:text-white">Building thoughtful<br />intelligence for <span className="text-accent">people.</span></h1>
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">I’m Akshay, a Software Engineer focused on AI, machine learning, and data science, creating useful products from agentic workflows and RAG systems to production-ready ML tools.</p>
+    </motion.div>
+    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.18 }} className="mt-8 grid gap-3 sm:grid-cols-12">
+      <div className="relative min-h-[230px] overflow-hidden rounded-[2rem] border border-slate-200 bg-[#fff8eb] p-6 sm:col-span-7 dark:border-[#303030] dark:bg-[#121212]"><div className="absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_1px_1px,rgba(217,119,6,.22)_1px,transparent_0)] [background-size:18px_18px] dark:opacity-30" /><div className="relative z-10 flex h-full flex-col justify-between"><div><span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-white/70 px-3 py-1.5 font-mono text-xs text-accent shadow-sm backdrop-blur dark:bg-[#181818]/80"><Sparkles size={13} /> Available for opportunities</span><h2 className="mt-5 max-w-md text-2xl font-semibold leading-tight tracking-[-.04em] text-slate-900 dark:text-white sm:text-3xl">AI systems that make complex work feel simple.</h2></div><div className="flex flex-wrap gap-2 font-mono text-xs text-slate-600 dark:text-slate-300"><span className="rounded-full bg-white/75 px-3 py-1.5 dark:bg-white/10">AI & ML</span><span className="rounded-full bg-white/75 px-3 py-1.5 dark:bg-white/10">Data Science</span><span className="rounded-full bg-white/75 px-3 py-1.5 dark:bg-white/10">Agentic Systems</span></div></div><div className="absolute right-7 top-7 flex h-20 w-20 rotate-12 items-center justify-center rounded-[1.4rem] border border-white/75 bg-white/80 text-accent shadow-xl backdrop-blur-sm dark:border-white/10 dark:bg-[#1b1b1b]/90"><BrainCircuit size={38} strokeWidth={1.5} /></div><div className="absolute bottom-8 right-28 flex h-12 w-12 -rotate-12 items-center justify-center rounded-xl border border-white/75 bg-white/80 text-accent shadow-lg backdrop-blur-sm dark:border-white/10 dark:bg-[#1b1b1b]/90"><Code2 size={22} strokeWidth={1.5} /></div></div>
+      <div className="group relative min-h-[230px] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 sm:col-span-5 dark:border-[#303030] dark:bg-[#171717]"><img src={profileImg} alt="Akshay S G" className="h-full w-full object-cover object-center grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" /><div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-slate-950/80 to-transparent" /><div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white"><div><p className="text-lg font-semibold tracking-[-.04em]">Akshay S G</p><p className="mt-1 flex items-center gap-1.5 font-mono text-xs text-slate-200"><MapPin size={12} /> Bengaluru, India</p></div><span className="rounded-full bg-white/15 p-2 backdrop-blur"><ArrowUpRight size={16} /></span></div></div>
+      <a href={RESUME_DATA.links.resume} target="_blank" rel="noreferrer" className="group flex items-center justify-between rounded-[1.6rem] border border-slate-200 bg-white px-6 py-5 sm:col-span-5 dark:border-[#303030] dark:bg-[#151515]"><span className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200"><span className="rounded-xl bg-accent/10 p-2 text-accent"><FileText size={17} /></span> View my resume</span><ArrowUpRight size={18} className="text-accent transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+      <a href={`mailto:${RESUME_DATA.contact.email}`} className="group flex items-center justify-between rounded-[1.6rem] bg-accent px-6 py-5 text-white sm:col-span-7"><span className="text-sm font-medium">Let’s make something useful together.</span><ArrowUpRight size={18} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+    </motion.div>
+  </div>
+);
