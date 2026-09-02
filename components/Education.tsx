@@ -13,12 +13,12 @@ export const Education: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1, duration: 0.5 }}
-          className="group relative bg-white dark:bg-[#181C28]/90 backdrop-blur-sm p-7 rounded-2xl border border-slate-200 dark:border-[#222838] hover:border-accent/60 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start sm:items-center shadow-md dark:shadow-lg hover:shadow-xl hover:shadow-accent/10"
+          className="group relative bg-white dark:bg-[#181818]/90 backdrop-blur-sm p-7 rounded-2xl border border-slate-200 dark:border-[#2a2a2a] hover:border-accent/60 transition-all duration-300 flex flex-col sm:flex-row gap-6 items-start sm:items-center shadow-md dark:shadow-lg hover:shadow-xl hover:shadow-accent/10"
         >
           {/* Ambient Glow */}
           <div className="absolute top-1/2 right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -translate-y-1/2"></div>
 
-          <div className="flex-shrink-0 bg-slate-100 dark:bg-[#121620] p-4 rounded-xl border border-slate-200 dark:border-[#222838] text-slate-700 dark:text-slate-300 group-hover:text-accent transition-all shadow-inner">
+          <div className="flex-shrink-0 bg-slate-100 dark:bg-[#101010] p-4 rounded-xl border border-slate-200 dark:border-[#2a2a2a] text-slate-700 dark:text-slate-300 group-hover:text-accent transition-all shadow-inner">
             <GraduationCap size={36} />
           </div>
 
@@ -31,7 +31,7 @@ export const Education: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2 font-mono text-xs text-slate-600 dark:text-slate-400">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 dark:bg-[#121620] border border-slate-200 dark:border-[#222838]">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-100 dark:bg-[#101010] border border-slate-200 dark:border-[#2a2a2a]">
                 <Calendar size={13} className="text-accent" />
                 {edu.period}
               </span>

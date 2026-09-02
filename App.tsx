@@ -41,14 +41,14 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#fbfcfd] dark:bg-[#0b1118] text-slate-900 dark:text-slate-200 selection:bg-accent selection:text-white relative overflow-x-hidden font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-[#fbfcfd] dark:bg-[#080808] text-slate-900 dark:text-slate-200 selection:bg-accent selection:text-white relative overflow-x-hidden font-sans transition-colors duration-300">
       
       {/* Background Dot Texture */}
       <div className="fixed inset-0 bg-dot-grid opacity-30 dark:opacity-20 pointer-events-none z-0"></div>
 
       {/* Floating Header Navigation */}
       <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
-        <div className="bg-white/85 dark:bg-[#121620]/85 backdrop-blur-xl border border-slate-200 dark:border-[#283343] rounded-full px-5 py-2.5 flex items-center justify-between shadow-[0_8px_30px_rgba(15,23,42,.08)] dark:shadow-2xl dark:shadow-black/40 transition-colors duration-300">
+        <div className="bg-white/85 dark:bg-[#101010]/85 backdrop-blur-xl border border-slate-200 dark:border-[#303030] rounded-full px-5 py-2.5 flex items-center justify-between shadow-[0_8px_30px_rgba(15,23,42,.08)] dark:shadow-2xl dark:shadow-black/40 transition-colors duration-300">
           
           {/* Logo Name (Clean Name without ASG icon) */}
           <motion.div
@@ -69,7 +69,7 @@ const App: React.FC = () => {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
-                className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#222838]/60 px-3.5 py-2 rounded-full transition-all"
+                className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#2a2a2a]/60 px-3.5 py-2 rounded-full transition-all"
               >
                 {link.name}
               </motion.a>
@@ -81,11 +81,11 @@ const App: React.FC = () => {
             {/* Theme Switcher Button */}
             <button
               onClick={toggleTheme}
-              className="p-2.5 rounded-full bg-slate-100 dark:bg-[#181C28] text-slate-700 dark:text-slate-300 hover:text-accent border border-slate-200 dark:border-[#222838] transition-colors shadow-sm"
+              className="p-2.5 rounded-full bg-slate-100 dark:bg-[#181818] text-slate-700 dark:text-slate-300 hover:text-accent border border-slate-200 dark:border-[#2a2a2a] transition-colors shadow-sm"
               title={isDarkMode ? "Switch to Light Theme" : "Switch to Dark Theme"}
               aria-label="Toggle Theme"
             >
-              {isDarkMode ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-sky-500" />}
+              {isDarkMode ? <Sun size={16} className="text-amber-400" /> : <Moon size={16} className="text-amber-600" />}
             </button>
 
             {RESUME_DATA.links.resume && (
@@ -93,7 +93,7 @@ const App: React.FC = () => {
                 href={RESUME_DATA.links.resume}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent hover:bg-sky-600 text-white text-xs font-semibold font-mono transition-all shadow-md shadow-accent/20"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-accent hover:bg-accent-dark text-white text-xs font-semibold font-mono transition-all shadow-md shadow-accent/20"
               >
                 <span>Resume</span>
                 <ArrowUpRight size={14} />
@@ -105,7 +105,7 @@ const App: React.FC = () => {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full bg-slate-100 dark:bg-[#181C28] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#222838]"
+              className="p-2 rounded-full bg-slate-100 dark:bg-[#181818] text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-[#2a2a2a]"
               aria-label="Toggle Theme"
             >
               {isDarkMode ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-violet-600" />}
@@ -113,7 +113,7 @@ const App: React.FC = () => {
 
             <button
               onClick={toggleMenu}
-              className="p-2 rounded-full text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#222838] transition-colors"
+              className="p-2 rounded-full text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-[#2a2a2a] transition-colors"
               aria-label="Toggle Navigation Menu"
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -128,14 +128,14 @@ const App: React.FC = () => {
               initial={{ opacity: 0, y: -10, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              className="md:hidden mt-2 bg-white/95 dark:bg-[#121620]/95 backdrop-blur-xl border border-slate-200 dark:border-[#222838] rounded-2xl p-4 shadow-2xl space-y-2 overflow-hidden"
+              className="md:hidden mt-2 bg-white/95 dark:bg-[#101010]/95 backdrop-blur-xl border border-slate-200 dark:border-[#2a2a2a] rounded-2xl p-4 shadow-2xl space-y-2 overflow-hidden"
             >
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#222838] transition-colors"
+                  className="block px-4 py-2.5 rounded-xl text-sm font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-[#2a2a2a] transition-colors"
                 >
                   {link.name}
                 </a>
@@ -162,7 +162,7 @@ const App: React.FC = () => {
         <SocialIcon href={RESUME_DATA.links.github} icon={<Github size={18} />} title="GitHub" />
         <SocialIcon href={RESUME_DATA.links.linkedin} icon={<Linkedin size={18} />} title="LinkedIn" />
         <SocialIcon href={`tel:${RESUME_DATA.contact.phone.replace(/\s/g, '')}`} icon={<Phone size={18} />} title="Phone" />
-        <div className="w-[1px] h-16 bg-slate-300 dark:bg-[#222838] mt-2"></div>
+        <div className="w-[1px] h-16 bg-slate-300 dark:bg-[#2a2a2a] mt-2"></div>
       </div>
 
       {/* Main Content Sections */}
@@ -171,32 +171,32 @@ const App: React.FC = () => {
           <Hero />
         </section>
 
-        <section id="experience" className="border-t border-slate-200 dark:border-[#283343]/60 bg-slate-100/50 dark:bg-[#101720]/50 transition-colors duration-300">
+        <section id="experience" className="border-t border-slate-200 dark:border-[#303030]/60 bg-slate-100/50 dark:bg-[#0e0e0e]/50 transition-colors duration-300">
           <SectionWrapper id="experience" title="Work Experience" index="01">
             <Experience />
           </SectionWrapper>
         </section>
 
-        <section id="projects" className="border-t border-slate-200 dark:border-[#283343]/60 bg-[#fbfcfd] dark:bg-[#0b1118] transition-colors duration-300">
+        <section id="projects" className="border-t border-slate-200 dark:border-[#303030]/60 bg-[#fbfcfd] dark:bg-[#080808] transition-colors duration-300">
           <SectionWrapper id="projects" title="Featured Projects" index="02">
             <Projects />
           </SectionWrapper>
         </section>
 
-        <section id="skills" className="border-t border-slate-200 dark:border-[#283343]/60 bg-slate-100/50 dark:bg-[#101720]/50 transition-colors duration-300">
+        <section id="skills" className="border-t border-slate-200 dark:border-[#303030]/60 bg-slate-100/50 dark:bg-[#0e0e0e]/50 transition-colors duration-300">
           <SectionWrapper id="skills" title="Technical Skills" index="03">
             <Skills />
           </SectionWrapper>
         </section>
 
-        <section id="education" className="border-t border-slate-200 dark:border-[#283343]/60 bg-[#fbfcfd] dark:bg-[#0b1118] transition-colors duration-300">
+        <section id="education" className="border-t border-slate-200 dark:border-[#303030]/60 bg-[#fbfcfd] dark:bg-[#080808] transition-colors duration-300">
           <SectionWrapper id="education" title="Education & Degree" index="04">
             <Education />
           </SectionWrapper>
         </section>
 
         {/* High Impact Contact CTA Footer */}
-        <section className="border-t border-slate-200 dark:border-[#222838]/80 bg-white/70 dark:bg-[#181C28]/60 relative overflow-hidden py-20 transition-colors duration-300">
+        <section className="border-t border-slate-200 dark:border-[#2a2a2a]/80 bg-white/70 dark:bg-[#181818]/60 relative overflow-hidden py-20 transition-colors duration-300">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] pointer-events-none"></div>
 
           <div className="max-w-4xl mx-auto px-4 text-center space-y-8 relative z-10">
@@ -216,7 +216,7 @@ const App: React.FC = () => {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <button
                 onClick={handleCopyEmail}
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-sky-600 text-white font-semibold text-sm transition-all duration-300 shadow-xl shadow-accent/25 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-accent-dark text-white font-semibold text-sm transition-all duration-300 shadow-xl shadow-accent/25 hover:-translate-y-0.5"
               >
                 {copiedEmail ? <Check size={16} /> : <Copy size={16} />}
                 <span>{copiedEmail ? "Email Copied!" : "Copy Email Address"}</span>
@@ -224,7 +224,7 @@ const App: React.FC = () => {
 
               <a
                 href={`mailto:${RESUME_DATA.contact.email}`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white dark:bg-[#121620] hover:bg-slate-100 dark:hover:bg-[#222838] text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-[#222838] text-sm font-semibold transition-all hover:-translate-y-0.5 shadow-sm"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white dark:bg-[#101010] hover:bg-slate-100 dark:hover:bg-[#2a2a2a] text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-[#2a2a2a] text-sm font-semibold transition-all hover:-translate-y-0.5 shadow-sm"
               >
                 <Mail size={16} className="text-accent" />
                 <span>Send Direct Mail</span>
@@ -235,7 +235,7 @@ const App: React.FC = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-slate-200 dark:border-[#222838] bg-slate-100 dark:bg-[#0B0D13] py-10 relative z-10 text-slate-500 dark:text-slate-400 font-mono text-xs transition-colors duration-300">
+      <footer className="border-t border-slate-200 dark:border-[#2a2a2a] bg-slate-100 dark:bg-[#080808] py-10 relative z-10 text-slate-500 dark:text-slate-400 font-mono text-xs transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Akshay S G. Built with React & Tailwind.</p>
           <div className="flex items-center space-x-6">
@@ -266,7 +266,7 @@ const SectionWrapper: React.FC<{ id: string; title: string; index: string; child
       <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white tracking-[-.05em] font-display">
         {title}
       </h2>
-      <div className="h-[1px] flex-grow ml-4 bg-slate-200 dark:bg-[#222838] opacity-60 hidden sm:block"></div>
+      <div className="h-[1px] flex-grow ml-4 bg-slate-200 dark:bg-[#2a2a2a] opacity-60 hidden sm:block"></div>
     </div>
     {children}
   </motion.section>
@@ -281,7 +281,7 @@ const SocialIcon: React.FC<{ href: string; icon: React.ReactNode; title: string 
     title={title}
     whileHover={{ y: -3, scale: 1.1 }}
     whileTap={{ scale: 0.95 }}
-    className="p-3 rounded-full bg-white dark:bg-[#181C28] border border-slate-200 dark:border-[#222838] text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white hover:border-accent/60 transition-all shadow-md"
+    className="p-3 rounded-full bg-white dark:bg-[#181818] border border-slate-200 dark:border-[#2a2a2a] text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white hover:border-accent/60 transition-all shadow-md"
   >
     {icon}
   </motion.a>
