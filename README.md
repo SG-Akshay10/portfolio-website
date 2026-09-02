@@ -1,4 +1,4 @@
-# Akshay S G - Portfolio
+# Portfolio
 
 This is the source code for my personal portfolio website.
 
@@ -11,14 +11,7 @@ This is the source code for my personal portfolio website.
    npm install
    ```
 
-2. **Set up environment variables:**
-   Create a `.env.local` file in the root directory and add your Gemini API key:
-   ```env
-   VITE_GEMINI_API_KEY=your_api_key_here
-   ```
-   *(Note: The existing code references `GEMINI_API_KEY`, but Vite requires `VITE_` prefix for client-side access unless configured otherwise. Please check `services` or `constants.ts` if it uses a different convention. Based on standard Vite + React usage, `VITE_` is expected.)*
-
-3. **Run the development server:**
+2. **Run the development server:**
    ```bash
    npm run dev
    ```
@@ -41,12 +34,3 @@ To preview the production build locally:
 ```bash
 npm run preview
 ```
-
-## Project Structure
-
-- `src/`: Source code
-  - `components/`: React components
-  - `services/`: API services
-  - `constants.ts`: Constant values
-  - `types.ts`: TypeScript type definitions
-- `public/`: Static assets
