@@ -197,7 +197,7 @@ const App: React.FC = () => {
 
         {/* High Impact Contact CTA Footer */}
         <section className="border-t border-slate-200 dark:border-[#2a2a2a]/80 bg-white/70 dark:bg-[#181818]/60 relative overflow-hidden py-20 transition-colors duration-300">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/15 rounded-full blur-[120px] pointer-events-none"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/[0.06] rounded-full blur-[120px] pointer-events-none"></div>
 
           <div className="max-w-4xl mx-auto px-4 text-center space-y-8 relative z-10">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-xs font-mono text-accent">
@@ -237,7 +237,7 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer className="border-t border-slate-200 dark:border-[#2a2a2a] bg-slate-100 dark:bg-[#080808] py-10 relative z-10 text-slate-500 dark:text-slate-400 font-mono text-xs transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Akshay S G. Built with React & Tailwind.</p>
+          <p>© {new Date().getFullYear()} Akshay S G.</p>
           <div className="flex items-center space-x-6">
             <a href={RESUME_DATA.links.github} target="_blank" rel="noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">GitHub</a>
             <a href={RESUME_DATA.links.linkedin} target="_blank" rel="noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">LinkedIn</a>
