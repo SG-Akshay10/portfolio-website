@@ -41,20 +41,20 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-[#0B0D13] text-slate-900 dark:text-slate-200 selection:bg-accent selection:text-white relative overflow-x-hidden font-sans transition-colors duration-300">
+    <div className="min-h-screen bg-[#fbfcfd] dark:bg-[#0b1118] text-slate-900 dark:text-slate-200 selection:bg-accent selection:text-white relative overflow-x-hidden font-sans transition-colors duration-300">
       
       {/* Background Dot Texture */}
-      <div className="fixed inset-0 bg-dot-grid opacity-60 pointer-events-none z-0"></div>
+      <div className="fixed inset-0 bg-dot-grid opacity-30 dark:opacity-20 pointer-events-none z-0"></div>
 
       {/* Floating Header Navigation */}
-      <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="bg-white/85 dark:bg-[#121620]/85 backdrop-blur-xl border border-slate-200 dark:border-[#222838] rounded-full px-5 py-3 flex items-center justify-between shadow-lg dark:shadow-2xl dark:shadow-black/40 transition-colors duration-300">
+      <header className="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div className="bg-white/85 dark:bg-[#121620]/85 backdrop-blur-xl border border-slate-200 dark:border-[#283343] rounded-full px-5 py-2.5 flex items-center justify-between shadow-[0_8px_30px_rgba(15,23,42,.08)] dark:shadow-2xl dark:shadow-black/40 transition-colors duration-300">
           
           {/* Logo Name (Clean Name without ASG icon) */}
           <motion.div
             initial={{ opacity: 0, x: -15 }}
             animate={{ opacity: 1, x: 0 }}
-            className="font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 dark:text-white cursor-pointer flex items-center font-display"
+            className="font-semibold text-base sm:text-lg tracking-[-0.04em] text-slate-900 dark:text-white cursor-pointer flex items-center font-display"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <span>Akshay S G</span>
@@ -171,25 +171,25 @@ const App: React.FC = () => {
           <Hero />
         </section>
 
-        <section id="experience" className="border-t border-slate-200 dark:border-[#222838]/60 bg-slate-100/60 dark:bg-[#121620]/30 transition-colors duration-300">
+        <section id="experience" className="border-t border-slate-200 dark:border-[#283343]/60 bg-slate-100/50 dark:bg-[#101720]/50 transition-colors duration-300">
           <SectionWrapper id="experience" title="Work Experience" index="01">
             <Experience />
           </SectionWrapper>
         </section>
 
-        <section id="projects" className="border-t border-slate-200 dark:border-[#222838]/60 bg-slate-50 dark:bg-[#0B0D13] transition-colors duration-300">
+        <section id="projects" className="border-t border-slate-200 dark:border-[#283343]/60 bg-[#fbfcfd] dark:bg-[#0b1118] transition-colors duration-300">
           <SectionWrapper id="projects" title="Featured Projects" index="02">
             <Projects />
           </SectionWrapper>
         </section>
 
-        <section id="skills" className="border-t border-slate-200 dark:border-[#222838]/60 bg-slate-100/60 dark:bg-[#121620]/30 transition-colors duration-300">
-          <SectionWrapper id="skills" title="Technical Matrix" index="03">
+        <section id="skills" className="border-t border-slate-200 dark:border-[#283343]/60 bg-slate-100/50 dark:bg-[#101720]/50 transition-colors duration-300">
+          <SectionWrapper id="skills" title="Technical Skills" index="03">
             <Skills />
           </SectionWrapper>
         </section>
 
-        <section id="education" className="border-t border-slate-200 dark:border-[#222838]/60 bg-slate-50 dark:bg-[#0B0D13] transition-colors duration-300">
+        <section id="education" className="border-t border-slate-200 dark:border-[#283343]/60 bg-[#fbfcfd] dark:bg-[#0b1118] transition-colors duration-300">
           <SectionWrapper id="education" title="Education & Degree" index="04">
             <Education />
           </SectionWrapper>
@@ -253,17 +253,17 @@ const App: React.FC = () => {
 const SectionWrapper: React.FC<{ id: string; title: string; index: string; children: React.ReactNode }> = ({ id, title, index, children }) => (
   <motion.section
     id={id}
-    className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+    className="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
     transition={{ duration: 0.6 }}
   >
     <div className="flex items-center gap-4 mb-12">
-      <span className="font-mono text-sm font-bold text-accent px-3 py-1 rounded-md bg-accent/10 border border-accent/20">
+      <span className="font-mono text-xs font-bold text-accent px-3 py-1 rounded-full bg-accent/10 border border-accent/20">
         {index}
       </span>
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight font-display">
+      <h2 className="text-3xl sm:text-4xl font-semibold text-slate-900 dark:text-white tracking-[-.05em] font-display">
         {title}
       </h2>
       <div className="h-[1px] flex-grow ml-4 bg-slate-200 dark:bg-[#222838] opacity-60 hidden sm:block"></div>

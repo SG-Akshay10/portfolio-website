@@ -1,155 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { RESUME_DATA } from '../constants';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowDownRight, Sparkles, MapPin, FileText, Send } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, BrainCircuit, Code2, FileText, MapPin, Sparkles } from 'lucide-react';
 import profileImg from '../assest/images/DSC_0609.JPG';
 
-export const Hero: React.FC = () => {
-  const roles = [
-    "AI & Machine Learning Engineer",
-    "Associate Software Engineer",
-    "RAG & Agentic AI Architect",
-    "Full-Stack Developer"
-  ];
-  const [currentRole, setCurrentRole] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
-    }, 3200);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="w-full flex flex-col justify-center min-h-[75vh] relative pt-8 pb-12">
-      {/* Background radial glow */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/15 rounded-full blur-[140px] pointer-events-none"></div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
-        
-        {/* Left Column - Main Copy & CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="lg:col-span-7 flex flex-col items-start text-left space-y-6"
-        >
-          {/* Status Badge Pill */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white dark:bg-[#181C28] border border-slate-200 dark:border-[#222838] shadow-sm text-xs font-mono text-slate-700 dark:text-slate-300"
-          >
-            <span className="relative flex h-2.5 w-2.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-            </span>
-            <span>Available for new opportunities</span>
-            <span className="text-slate-400 dark:text-slate-600">•</span>
-            <span className="text-slate-500 dark:text-slate-400 flex items-center gap-1">
-              <MapPin size={12} className="text-accent" /> Bengaluru, IN
-            </span>
-          </motion.div>
-
-          {/* Large Headline */}
-          <div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.05]">
-              Hello, I'm <br />
-              <span className="bg-gradient-to-r from-slate-900 via-slate-700 to-accent dark:from-white dark:via-slate-100 dark:to-accent-light bg-clip-text text-transparent">
-                Akshay S G
-              </span>
-            </h1>
-          </div>
-
-          {/* Dynamic Role Switcher */}
-          <div className="h-10 sm:h-12 overflow-hidden relative w-full">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentRole}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -24 }}
-                transition={{ duration: 0.4 }}
-                className="flex items-center gap-2 text-xl sm:text-2xl font-semibold text-accent"
-              >
-                <Sparkles size={20} className="text-accent" />
-                <span>{roles[currentRole]}</span>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Subheading / Description */}
-          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
-            Associate Software Engineer specializing in building intelligent <span className="text-slate-900 dark:text-white font-semibold">Agentic Workflows</span>, <span className="text-slate-900 dark:text-white font-semibold">RAG Systems</span>, and high-performance Machine Learning pipelines. Transforming complex data into robust production applications.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 pt-2">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-accent hover:bg-sky-600 text-white font-semibold text-sm transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:-translate-y-0.5"
-            >
-              Explore Work
-              <ArrowDownRight size={18} />
-            </a>
-
-            {RESUME_DATA.links.resume && (
-              <a
-                href={RESUME_DATA.links.resume}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-white dark:bg-[#181C28] hover:bg-slate-100 dark:hover:bg-[#222838] text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-[#222838] hover:border-slate-400 font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 shadow-sm"
-              >
-                <FileText size={16} className="text-accent" />
-                Resume
-              </a>
-            )}
-
-            <a
-              href={`mailto:${RESUME_DATA.contact.email}`}
-              className="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-transparent hover:bg-slate-200/50 dark:hover:bg-white/5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white border border-transparent hover:border-slate-300 dark:hover:border-[#222838] text-sm font-medium transition-all"
-            >
-              <Send size={15} />
-              Contact
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Right Column - Portrait & Visual Card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:col-span-5 flex justify-center lg:justify-end"
-        >
-          <div className="relative group">
-            {/* Ambient Backlight Glow */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-accent via-sky-400 to-blue-500 rounded-3xl blur-xl opacity-30 dark:opacity-40 group-hover:opacity-60 transition duration-500"></div>
-
-            {/* Main Image Container Card */}
-            <div className="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl bg-white dark:bg-[#181C28] p-3 border border-slate-200 dark:border-[#222838] overflow-hidden shadow-2xl flex flex-col">
-              <div className="w-full h-full rounded-xl overflow-hidden relative">
-                <img
-                  src={profileImg}
-                  alt="Akshay S G"
-                  className="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 dark:from-[#0B0D13]/80 via-transparent to-transparent"></div>
-              </div>
-
-              {/* Floating Mini Overlay Tag */}
-              <div className="absolute bottom-6 left-6 right-6 p-3 rounded-xl bg-white/90 dark:bg-[#121620]/90 backdrop-blur-md border border-slate-200 dark:border-[#222838] flex items-center justify-between shadow-lg">
-                <div>
-                  <p className="text-xs font-bold text-slate-900 dark:text-white">Akshay S G</p>
-                  <p className="text-[11px] font-mono text-accent">Digital.ai • Bengaluru</p>
-                </div>
-                <div className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981]"></div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-    </div>
-  );
-};
+export const Hero: React.FC = () => (
+  <div className="relative py-10 sm:py-12 lg:py-14">
+    <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-4xl">
+      <p className="mb-4 flex items-center gap-2 font-mono text-xs font-medium tracking-wide text-accent sm:text-sm"><span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_0_5px_rgba(14,165,233,.12)]" />  SOFTWARE ENGINEER · BENGALURU, INDIA</p>
+      <h1 className="font-display text-[clamp(3rem,6.5vw,5.7rem)] font-medium leading-[.93] tracking-[-0.065em] text-slate-950 dark:text-white">Building thoughtful<br />intelligence for <span className="text-accent">people.</span></h1>
+      <p className="mt-6 max-w-xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">I’m Akshay, a Software Engineer focused on AI, machine learning, and data science, creating useful products from agentic workflows and RAG systems to production-ready ML tools.</p>
+    </motion.div>
+    <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.18 }} className="mt-8 grid gap-3 sm:grid-cols-12">
+      <div className="relative min-h-[230px] overflow-hidden rounded-[2rem] border border-slate-200 bg-[#eaf6fc] p-6 sm:col-span-7 dark:border-[#283343] dark:bg-[#101b27]"><div className="absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_1px_1px,rgba(14,165,233,.22)_1px,transparent_0)] [background-size:18px_18px] dark:opacity-30" /><div className="relative z-10 flex h-full flex-col justify-between"><div><span className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-white/70 px-3 py-1.5 font-mono text-xs text-accent shadow-sm backdrop-blur dark:bg-[#152537]/80"><Sparkles size={13} /> Available for opportunities</span><h2 className="mt-5 max-w-md text-2xl font-semibold leading-tight tracking-[-.04em] text-slate-900 dark:text-white sm:text-3xl">AI systems that make complex work feel simple.</h2></div><div className="flex flex-wrap gap-2 font-mono text-xs text-slate-600 dark:text-slate-300"><span className="rounded-full bg-white/75 px-3 py-1.5 dark:bg-white/10">AI & ML</span><span className="rounded-full bg-white/75 px-3 py-1.5 dark:bg-white/10">Data Science</span><span className="rounded-full bg-white/75 px-3 py-1.5 dark:bg-white/10">Agentic Systems</span></div></div><div className="absolute right-7 top-7 flex h-20 w-20 rotate-12 items-center justify-center rounded-[1.4rem] border border-white/75 bg-white/80 text-accent shadow-xl backdrop-blur-sm dark:border-white/10 dark:bg-[#1b2b3c]/90"><BrainCircuit size={38} strokeWidth={1.5} /></div><div className="absolute bottom-8 right-28 flex h-12 w-12 -rotate-12 items-center justify-center rounded-xl border border-white/75 bg-white/80 text-accent shadow-lg backdrop-blur-sm dark:border-white/10 dark:bg-[#1b2b3c]/90"><Code2 size={22} strokeWidth={1.5} /></div></div>
+      <div className="group relative min-h-[230px] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 sm:col-span-5 dark:border-[#283343] dark:bg-[#171d27]"><img src={profileImg} alt="Akshay S G" className="h-full w-full object-cover object-center grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0" /><div className="absolute inset-x-0 bottom-0 h-3/5 bg-gradient-to-t from-slate-950/80 to-transparent" /><div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white"><div><p className="text-lg font-semibold tracking-[-.04em]">Akshay S G</p><p className="mt-1 flex items-center gap-1.5 font-mono text-xs text-slate-200"><MapPin size={12} /> Bengaluru, India</p></div><span className="rounded-full bg-white/15 p-2 backdrop-blur"><ArrowUpRight size={16} /></span></div></div>
+      <a href={RESUME_DATA.links.resume} target="_blank" rel="noreferrer" className="group flex items-center justify-between rounded-[1.6rem] border border-slate-200 bg-white px-6 py-5 sm:col-span-5 dark:border-[#283343] dark:bg-[#151b25]"><span className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-200"><span className="rounded-xl bg-accent/10 p-2 text-accent"><FileText size={17} /></span> View my resume</span><ArrowUpRight size={18} className="text-accent transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+      <a href={`mailto:${RESUME_DATA.contact.email}`} className="group flex items-center justify-between rounded-[1.6rem] bg-accent px-6 py-5 text-white sm:col-span-7"><span className="text-sm font-medium">Let’s make something useful together.</span><ArrowUpRight size={18} className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" /></a>
+    </motion.div>
+  </div>
+);

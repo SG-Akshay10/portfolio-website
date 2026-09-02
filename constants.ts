@@ -29,7 +29,7 @@ export const RESUME_DATA: ResumeData = {
                     text: "Developed Quick Protect, an AI-powered security analysis platform that enables sales engineers to perform comprehensive vulnerability assessments on Android and iOS applications, streamlining the process from binary analysis to customer proposal generation.",
                     subItems: [
                         "Built automated binary decompilation pipeline using Androguard (Android) and Ghidra (iOS) to reverse-engineer mobile applications into analyzable source code.",
-                        "mplemented LLM-powered code deobfuscation module that detects and reverses obfuscation patterns, making previously unreadable code accessible for security analysis.",
+                        "Implemented LLM-powered code deobfuscation module that detects and reverses obfuscation patterns, making previously unreadable code accessible for security analysis.",
                         "Designed LangGraph-based orchestration workflows to manage multi-stage analysis processes with conditional routing based on code characteristics."
                     ]
                 },
