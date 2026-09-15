@@ -112,7 +112,7 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: "SafeScroll",
-            tech: "Chrome Extension, JavaScript, Python, FastAPI, TensorFlow.js",
+            tech: "Python, FastAPI, JavaScript, Firefox Extension, TensorFlow.js",
             description: [
                 "Privacy-first browser extension for real-time NSFW content detection.",
                 "Utilizes on-device machine learning for instant blurring of sensitive images.",
@@ -153,7 +153,7 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: "Fashion-image-segmentation",
-            tech: "Computer Vision, Deep Learning",
+            tech: "Computer Vision, Image Segmentation",
             description: [
                 "Precise segmentation of fashion items in images.",
                 "Utilizes advanced segmentation architectures.",
@@ -173,7 +173,7 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: "Suicide-Data-Analysis",
-            tech: "Data Analysis, Visualization, Pandas",
+            tech: "Python, Tableau, Pandas",
             description: [
                 "In-depth analysis of suicide rates and trends.",
                 "Identifies key socio-economic factors.",
@@ -181,16 +181,16 @@ export const RESUME_DATA: ResumeData = {
             ],
             link: "https://github.com/SG-Akshay10/Suicide-Data-Analysis"
         },
-        // {
-        //     name: "movie-recommendation",
-        //     tech: "Machine Learning, Collaborative Filtering",
-        //     description: [
-        //         "Personalized movie recommender system.",
-        //         "Uses collaborative and content-based filtering.",
-        //         "Enhances user discovery experience."
-        //     ],
-        //     link: "https://github.com/SG-Akshay10/movie-recommendation"
-        // }
+        {
+            name: "Movie-Recommendation",
+            tech: "Cosine Similarity, Collaborative Filtering",
+            description: [
+                "Personalized movie recommender system.",
+                "Uses collaborative and content-based filtering.",
+                "Enhances user discovery experience."
+            ],
+            link: "https://github.com/SG-Akshay10/movie-recommendation"
+        }
     ],
     education: [
         {
