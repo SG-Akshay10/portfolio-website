@@ -11,7 +11,7 @@ export const RESUME_DATA: ResumeData = {
     links: {
         linkedin: "https://www.linkedin.com/in/akshay-s-g-a81516239/",
         github: "https://github.com/SG-Akshay10",
-        resume: "https://drive.google.com/file/d/1xTSYTGsB0LFKbvStkEYLP_XdCcNBHdPP/view?usp=sharing"
+        resume: "https://drive.google.com/file/d/1aCo55I3LDttVOoW17N_R5PXQMmwJy9Qk/view?usp=sharing"
     },
     skills: {
         languages: ["Python", "C", "JavaScript", "HTML/CSS", "React.js", "FastAPI"],
@@ -31,6 +31,14 @@ export const RESUME_DATA: ResumeData = {
                         "Built automated binary decompilation pipeline using Androguard (Android) and Ghidra (iOS) to reverse-engineer mobile applications into analyzable source code.",
                         "Implemented LLM-powered code deobfuscation module that detects and reverses obfuscation patterns, making previously unreadable code accessible for security analysis.",
                         "Designed LangGraph-based orchestration workflows to manage multi-stage analysis processes with conditional routing based on code characteristics."
+                    ]
+                },
+                {
+                    text: "Architected an autonomous GUI agent that independently explores mobile apps to build a knowledge base of UI element behavior, enabling task execution without human-labeled training data.",
+                    subItems: [
+                        "Built an automated exploration pipeline using Android ADB and a multimodal LLM agent to autonomously navigate apps and generate function-aware interaction trajectories, with configurable branching factor, depth, and step limits.",
+                        "Implemented an unsupervised knowledge-mining module that extracts transition-aware knowledge (action → UI state-change pairs) from exploration trajectories, converting raw interaction data into a structured, embeddable knowledge base.",
+                        "Designed a retrieval microservice that serves relevant mined knowledge to the agent at inference time, allowing real-time task execution to be grounded in previously discovered UI behavior.."
                     ]
                 },
                 {
@@ -79,6 +87,19 @@ export const RESUME_DATA: ResumeData = {
     ],
     projects: [
         {
+            name: "Dalal AI",
+            tech: "Python, FastAPI, Langgraph, Next.js, Supabase",
+            description: [
+                "Full-stack stock investment tracking and analysis platform with AI-powered insights, portfolio management, and personalized alerts.",
+                "AI-powered market analysis: Utilizes Large Language Models to analyze market trends, news sentiment, and company fundamentals to provide actionable trading insights.",
+                "Portfolio management: Enables users to track multiple investments, monitor performance, and receive real-time updates on portfolio value and potential risks.",
+                "Personalized alerts: Delivers custom notifications for significant market changes, investment opportunities, or risk alerts based on user preferences and portfolio holdings.",
+                "LangGraph orchestration: Manages complex workflows for market data aggregation, AI analysis, and alert generation through a modular, state-aware architecture.",
+                "Next.js frontend with FastAPI backend: Delivers a responsive, real-time user experience with robust API security and scalable data handling."
+            ],
+            link: "https://github.com/SG-Akshay10/dalal_ai"
+        },
+        {
             name: "Synth-FM",
             tech: "React, Python, FastAPI, OpenAI/Gemini/Groq, Kokoro TTS",
             description: [
@@ -91,7 +112,7 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: "SafeScroll",
-            tech: "Chrome Extension, JavaScript, Python, FastAPI, TensorFlow.js",
+            tech: "Python, FastAPI, JavaScript, Firefox Extension, TensorFlow.js",
             description: [
                 "Privacy-first browser extension for real-time NSFW content detection.",
                 "Utilizes on-device machine learning for instant blurring of sensitive images.",
@@ -132,7 +153,7 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: "Fashion-image-segmentation",
-            tech: "Computer Vision, Deep Learning",
+            tech: "Computer Vision, Image Segmentation",
             description: [
                 "Precise segmentation of fashion items in images.",
                 "Utilizes advanced segmentation architectures.",
@@ -152,7 +173,7 @@ export const RESUME_DATA: ResumeData = {
         },
         {
             name: "Suicide-Data-Analysis",
-            tech: "Data Analysis, Visualization, Pandas",
+            tech: "Python, Tableau, Pandas",
             description: [
                 "In-depth analysis of suicide rates and trends.",
                 "Identifies key socio-economic factors.",
@@ -160,16 +181,16 @@ export const RESUME_DATA: ResumeData = {
             ],
             link: "https://github.com/SG-Akshay10/Suicide-Data-Analysis"
         },
-        // {
-        //     name: "movie-recommendation",
-        //     tech: "Machine Learning, Collaborative Filtering",
-        //     description: [
-        //         "Personalized movie recommender system.",
-        //         "Uses collaborative and content-based filtering.",
-        //         "Enhances user discovery experience."
-        //     ],
-        //     link: "https://github.com/SG-Akshay10/movie-recommendation"
-        // }
+        {
+            name: "Movie-Recommendation",
+            tech: "Cosine Similarity, Collaborative Filtering",
+            description: [
+                "Personalized movie recommender system.",
+                "Uses collaborative and content-based filtering.",
+                "Enhances user discovery experience."
+            ],
+            link: "https://github.com/SG-Akshay10/movie-recommendation"
+        }
     ],
     education: [
         {
