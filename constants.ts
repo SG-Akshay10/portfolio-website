@@ -34,6 +34,14 @@ export const RESUME_DATA: ResumeData = {
                     ]
                 },
                 {
+                    text: "Architected an autonomous GUI agent that independently explores mobile apps to build a knowledge base of UI element behavior, enabling task execution without human-labeled training data.",
+                    subItems: [
+                        "Built an automated exploration pipeline using Android ADB and a multimodal LLM agent to autonomously navigate apps and generate function-aware interaction trajectories, with configurable branching factor, depth, and step limits.",
+                        "Implemented an unsupervised knowledge-mining module that extracts transition-aware knowledge (action → UI state-change pairs) from exploration trajectories, converting raw interaction data into a structured, embeddable knowledge base.",
+                        "Designed a retrieval microservice that serves relevant mined knowledge to the agent at inference time, allowing real-time task execution to be grounded in previously discovered UI behavior.."
+                    ]
+                },
+                {
                     text: "Developed AI-Quick-Insight, a business intelligence platform that enables non-technical users to query complex databases using natural language, automatically generating visualizations from conversational inputs.",
                     subItems: [
                         "Designed semantic search to identify relevant database tables integrated with LLM-based ambiguity detection that asks clarifying questions and rephrases unclear user inputs.",
@@ -78,6 +86,19 @@ export const RESUME_DATA: ResumeData = {
         }
     ],
     projects: [
+        {
+            name: "Dalal AI",
+            tech: "Python, FastAPI, Langgraph, Next.js, Supabase",
+            description: [
+                "Full-stack stock investment tracking and analysis platform with AI-powered insights, portfolio management, and personalized alerts.",
+                "AI-powered market analysis: Utilizes Large Language Models to analyze market trends, news sentiment, and company fundamentals to provide actionable trading insights.",
+                "Portfolio management: Enables users to track multiple investments, monitor performance, and receive real-time updates on portfolio value and potential risks.",
+                "Personalized alerts: Delivers custom notifications for significant market changes, investment opportunities, or risk alerts based on user preferences and portfolio holdings.",
+                "LangGraph orchestration: Manages complex workflows for market data aggregation, AI analysis, and alert generation through a modular, state-aware architecture.",
+                "Next.js frontend with FastAPI backend: Delivers a responsive, real-time user experience with robust API security and scalable data handling."
+            ],
+            link: "https://github.com/SG-Akshay10/dalal_ai"
+        },
         {
             name: "Synth-FM",
             tech: "React, Python, FastAPI, OpenAI/Gemini/Groq, Kokoro TTS",
