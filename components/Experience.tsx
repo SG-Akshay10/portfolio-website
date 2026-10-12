@@ -63,7 +63,21 @@ export const Experience: React.FC = () => {
                     {highlight.subItems.map((sub, j) => (
                       <div key={j} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                         <ChevronRight size={14} className="mt-0.5 text-accent flex-shrink-0 opacity-80" />
-                        <span className="leading-normal">{sub}</span>
+                        <span className="leading-normal">
+                          {sub.startsWith('Static analysis:') ? (
+                            <>
+                              <strong>Static analysis:</strong>
+                              {sub.slice('Static analysis:'.length)}
+                            </>
+                          ) : sub.startsWith('Dynamic analysis:') ? (
+                            <>
+                              <strong>Dynamic analysis:</strong>
+                              {sub.slice('Dynamic analysis:'.length)}
+                            </>
+                          ) : (
+                            sub
+                          )}
+                        </span>
                       </div>
                     ))}
                   </div>
