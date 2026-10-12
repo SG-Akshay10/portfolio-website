@@ -178,7 +178,7 @@ const App: React.FC = () => {
         </section>
 
         <section id="projects" className="border-t border-slate-200 dark:border-[#303030]/60 bg-[#fbfcfd] dark:bg-[#080808] transition-colors duration-300">
-          <SectionWrapper id="projects" title="Featured Projects" index="02">
+          <SectionWrapper id="projects" title="Featured Projects" index="02" maxWidth="max-w-7xl">
             <Projects />
           </SectionWrapper>
         </section>
@@ -250,10 +250,10 @@ const App: React.FC = () => {
 };
 
 // Section Wrapper Component
-const SectionWrapper: React.FC<{ id: string; title: string; index: string; children: React.ReactNode }> = ({ id, title, index, children }) => (
+const SectionWrapper: React.FC<{ id: string; title: string; index: string; children: React.ReactNode; maxWidth?: string }> = ({ id, title, index, children, maxWidth = "max-w-6xl" }) => (
   <motion.section
     id={id}
-    className="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+    className={`py-24 ${maxWidth} mx-auto px-4 sm:px-6 lg:px-8`}
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
