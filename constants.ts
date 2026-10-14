@@ -11,7 +11,7 @@ export const RESUME_DATA: ResumeData = {
     links: {
         linkedin: "https://www.linkedin.com/in/akshay-s-g-a81516239/",
         github: "https://github.com/SG-Akshay10",
-        resume: "https://drive.google.com/file/d/1dybi62NFQaOl0Mc0s9Y2Uqpk4Dr5zPMC/view?usp=sharing"
+        resume: "https://drive.google.com/file/d/1QCrk3A6xi1Fd3Orm5siPYCK5OXzq8rIy/view?usp=sharing"
     },
     skills: {
         languages: ["Python", "C", "JavaScript", "HTML/CSS", "React.js", "FastAPI"],
@@ -22,7 +22,7 @@ export const RESUME_DATA: ResumeData = {
         {
             company: "Digital.ai",
             role: "Associate Software Engineer",
-            period: "Feb 2025 - Present",
+            period: "Feb 2025 - Oct 2026",
             location: "Bengaluru, India",
             highlights: [
                 {
