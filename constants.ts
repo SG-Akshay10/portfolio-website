@@ -11,7 +11,7 @@ export const RESUME_DATA: ResumeData = {
     links: {
         linkedin: "https://www.linkedin.com/in/akshay-s-g-a81516239/",
         github: "https://github.com/SG-Akshay10",
-        resume: "https://drive.google.com/file/d/1QCrk3A6xi1Fd3Orm5siPYCK5OXzq8rIy/view?usp=sharing"
+        resume: "https://drive.google.com/file/d/1d4su7yAdIIyQ4hZBPxhD-KQ8-x9Ol9Bk/view?usp=sharing"
     },
     skills: {
         languages: ["Python", "C", "JavaScript", "HTML/CSS", "React.js", "FastAPI"],
